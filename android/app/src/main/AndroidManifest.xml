@@ -61,7 +61,7 @@
         tools:replace="android:label"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
-        android:label="OpenIM">
+        android:label="七亩地">
         <!--android:showWhenLocked="true"-->
         <activity
             android:name=".MainActivity"
