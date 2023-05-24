@@ -57,7 +57,7 @@
     </queries>
 
     <application
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_launcher"
         tools:replace="android:label"
         android:requestLegacyExternalStorage="true"
         android:usesCleartextTraffic="true"
