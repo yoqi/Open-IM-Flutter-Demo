@@ -12,7 +12,7 @@ import 'chat_logic.dart';
 
 class ChatPage extends StatelessWidget {
   final logic = Get.find<ChatLogic>();
-
+  
   Widget _itemView(index) => ChatItemView(
         key: logic.itemKey(index),
         index: index,
