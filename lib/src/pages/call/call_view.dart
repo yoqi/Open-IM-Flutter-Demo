@@ -10,10 +10,10 @@ class CallPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Obx(()=>WillPopScope(
-        onWillPop: logic.multiSelMode.value ? () async => logic.exit() : null,
-        child: Text("s")
-      )),
+      // body: Obx(()=>WillPopScope(
+      //   onWillPop: logic.multiSelMode.value ? () async => logic.exit() : null,
+      //   child: Text("s")
+      // )),
     );
   }
 }

@@ -1,5 +1,18 @@
-![avatar](https://github.com/OpenIMSDK/OpenIM-Docs/blob/main/docs/images/WechatIMG20.jpeg)
 ## 可以免费使用，必须在app启动页加上 (由OpenIM提供技术支持)
+
+sdk use java 17.0.7-tem
+
+
+
+cd /home/vscode/flutter
+git checkout 3.7.3
+flutter doctor
+
+cd /workspaces/qimudi/
+flutter build apk
+
+
+
 
 ### OpenIM
 A OpenIM flutter demo, only support android and ios.
