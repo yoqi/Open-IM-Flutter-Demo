@@ -11,12 +11,12 @@ class ImageRes {
   static const ic_radioSelBlue = "${_dir}ic_radio_sel_blue.webp";
   static const ic_backBigBlue = "${_dir}ic_back_big_blue.webp";
   static const ic_bigCamera = "${_dir}ic_big_camera.webp";
-  static const ic_tabHomeNor = "${_dir}ic_tab_conversation_nor.webp";
-  static const ic_tabHomeSel = "${_dir}ic_tab_conversation_sel.webp";
-  static const ic_tabContactsNor = "${_dir}ic_tab_contacts_nor.webp";
-  static const ic_tabContactsSel = "${_dir}ic_tab_contacts_sel.webp";
-  static const ic_tabMineNor = "${_dir}ic_tab_mine_nor.webp";
-  static const ic_tabMineSel = "${_dir}ic_tab_mine_sel.webp";
+  static const ic_tabHomeNor = "${_dir}icon_home.jpg";
+  static const ic_tabHomeSel = "${_dir}icon_home_yellow.jpg";
+  static const ic_tabContactsNor = "${_dir}icon_gonggao.jpg";
+  static const ic_tabContactsSel = "${_dir}icon_gonggao_yellow.jpg";
+  static const ic_tabMineNor = "${_dir}icon_mine.jpg";
+  static const ic_tabMineSel = "${_dir}icon_mine_yellow.jpg";
   static const ic_tabWorkNor = "${_dir}ic_tab_work_nor.webp";
   static const ic_tabWorkSel = "${_dir}ic_tab_work_sel.webp";
   static const ic_callBlack = "${_dir}ic_call_black.webp";
@@ -102,7 +102,7 @@ class ImageRes {
   static const ic_scanGroupQrcode = "${_dir}ic_scan_group_qrcode.webp";
   static const ic_groupID = "${_dir}ic_group_id.webp";
   static const ic_emptyBlacklist = "${_dir}ic_blacklist_empty.webp";
-  static const ic_app = "${_dir}ic_app.webp";
+  static const ic_app = "${_dir}crowd-qrcode-bg.png";
   static const ic_AddCallMember = "${_dir}ic_add_call_member.webp";
   static const ic_closeCallVideo = "${_dir}ic_call_video_close.webp";
   static const ic_openCallVideo = "${_dir}ic_call_video_open.webp";
