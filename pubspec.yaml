@@ -68,12 +68,11 @@ dependencies:
   device_info_plus: 6.0.0
   dart_date: ^1.1.1
   getuiflut: 0.2.14
-#  flutter_openim_widget: 2.3.0
+  # flutter_openim_widget: 2.3.5+3
   flutter_openim_widget:
     git:
       url: https://github.com/hrxiang/flutter_openim_widget.git
       ref: 2.3.5+3
-#    path: ../flutter_openim_widget
 
 dev_dependencies:
   flutter_test:
@@ -86,10 +85,11 @@ dependency_overrides:
   camera_android: 0.9.7+1
   camera_avfoundation: 0.9.7+1
   ffi: 2.0.1
-  pull_to_refresh:
-    git:
-      url: https://github.com/miquelbeltran/flutter_pulltorefresh
-      ref: master
+  pull_to_refresh: ^2.0.0
+  # pull_to_refresh:
+  #   git:
+  #     url: https://github.com/miquelbeltran/flutter_pulltorefresh
+  #     ref: master
 
 flutter:
 
