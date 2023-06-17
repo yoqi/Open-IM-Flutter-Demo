@@ -58,7 +58,7 @@ class FriendRemarkPage extends StatelessWidget {
                       controller: logic.inputCtrl,
                       // focusNode: logic.focusNode,
                       autofocus: true,
-                      maxLines: 3,
+                      maxLines: 4,
                       textAlign: TextAlign.left,
                       decoration: InputDecoration(
                         border: InputBorder.none,
@@ -92,7 +92,17 @@ class FriendRemarkPage extends StatelessWidget {
                   ),
                 ],
               ),
-            )
+            ),
+            SizedBox(
+              height: 12,
+            ),
+            Align(
+              child: Padding(
+                padding: const EdgeInsets.only(right: 24),
+                child: Text("0/15", style: PageStyle.ts_898989_12sp),
+              ),
+              alignment: Alignment.topRight,
+            ),
           ],
         ),
       ),
