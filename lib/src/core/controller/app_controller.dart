@@ -172,9 +172,9 @@ class AppController extends GetxController with UpgradeManger {
       case 1:
         local = Locale('zh', 'CN');
         break;
-      case 2:
-        local = Locale('en', 'US');
-        break;
+      // case 2:
+      //   local = Locale('en', 'US');
+      //   break;
     }
     return local;
   }

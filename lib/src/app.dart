@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         },
         supportedLocales: [
           const Locale('zh', 'CN'),
-          const Locale('en', 'US'),
+          // const Locale('en', 'US'),
         ],
         getPages: AppPages.routes,
         initialBinding: InitBinding(),
