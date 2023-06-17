@@ -24,7 +24,7 @@ class ImageRes {
   static const ic_searchGrey = "${_dir}ic_search_grey.webp";
   static const ic_phone = "${_dir}ic_phone.webp";
   static const ic_notify = "${_dir}ic_notify.webp";
-  static const ic_back = "${_dir}ic_back_black.webp";
+  static const ic_back = "${_dir}icon_back.jpg";
   static const ic_call = "${_dir}ic_call_black2.webp";
   static const ic_more = "${_dir}ic_more_info.webp";
 

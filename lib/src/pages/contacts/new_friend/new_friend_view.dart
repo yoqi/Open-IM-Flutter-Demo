@@ -27,20 +27,20 @@ class NewFriendPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            GestureDetector(
-              onTap: () => logic.toSearchPage(),
-              behavior: HitTestBehavior.translucent,
-              child: Container(
-                color: PageStyle.c_FFFFFF,
-                child: SearchBox(
-                  hintText: StrRes.searchDescribe,
-                  margin:
-                      EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
-                  padding: EdgeInsets.symmetric(horizontal: 13.w),
-                  enabled: false,
-                ),
-              ),
-            ),
+            // GestureDetector(
+            //   onTap: () => logic.toSearchPage(),
+            //   behavior: HitTestBehavior.translucent,
+            //   child: Container(
+            //     color: PageStyle.c_FFFFFF,
+            //     child: SearchBox(
+            //       hintText: StrRes.searchDescribe,
+            //       margin:
+            //           EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
+            //       padding: EdgeInsets.symmetric(horizontal: 13.w),
+            //       enabled: false,
+            //     ),
+            //   ),
+            // ),
             _buildChildTitleView(),
             Obx(
               () => _buildHeightContainer(
