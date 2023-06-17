@@ -21,27 +21,17 @@ class NewFriendPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: EnterpriseTitleBar.back(title: StrRes.newFriend),
+      appBar: EnterpriseTitleBar.back(
+        title: StrRes.newFriend,
+        backgroundColor: PageStyle.c_F8F8F8,
+        showShadow: false,
+      ),
       backgroundColor: PageStyle.c_F8F8F8,
       body: SafeArea(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // GestureDetector(
-            //   onTap: () => logic.toSearchPage(),
-            //   behavior: HitTestBehavior.translucent,
-            //   child: Container(
-            //     color: PageStyle.c_FFFFFF,
-            //     child: SearchBox(
-            //       hintText: StrRes.searchDescribe,
-            //       margin:
-            //           EdgeInsets.symmetric(horizontal: 22.w, vertical: 10.h),
-            //       padding: EdgeInsets.symmetric(horizontal: 13.w),
-            //       enabled: false,
-            //     ),
-            //   ),
-            // ),
-            _buildChildTitleView(),
+            SizedBox(height: 16.h),
             Obx(
               () => _buildHeightContainer(
                 child: ListView.builder(
@@ -143,20 +133,25 @@ class NewFriendPage extends StatelessWidget {
                             behavior: HitTestBehavior.translucent,
                             onTap: onTap,
                             child: Container(
+                              // width: 72,
+                              height: 32,
                               padding: EdgeInsets.symmetric(
                                 horizontal: 10.w,
                                 vertical: 2.h,
                               ),
                               decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: PageStyle.c_999999,
+                                  color: PageStyle.c_FFB300,
                                   width: 1,
                                 ),
-                                borderRadius: BorderRadius.circular(3),
+                                color: PageStyle.c_FFB300,
+                                borderRadius: BorderRadius.circular(16),
                               ),
-                              child: Text(
-                                StrRes.accept,
-                                style: PageStyle.ts_000000_12sp,
+                              child: Center(
+                                child: Text(
+                                  StrRes.accept,
+                                  style: PageStyle.ts_FFFFFF_16sp,
+                                ),
                               ),
                             ),
                           ),
@@ -178,7 +173,7 @@ class NewFriendPage extends StatelessWidget {
   Widget _buildChildTitleView() => Padding(
         padding: EdgeInsets.only(
           left: 22.w,
-          top: 10.h,
+          top: 16.h,
           bottom: 10.h,
         ),
         child: Text(

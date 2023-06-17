@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:openim_demo/src/res/strings.dart';
+import 'package:openim_demo/src/res/styles.dart';
+import 'package:openim_demo/src/widgets/titlebar.dart';
 
 class MessagePage extends StatelessWidget {
   const MessagePage({Key? key}) : super(key: key);
@@ -6,25 +9,10 @@ class MessagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: IconButton(
-            icon: Icon(Icons.arrow_back_ios, color: Color(0xffFFB300)),
-            onPressed: () {
-              Navigator.pop(context);
-            },
-          ),
-          actions: [
-            IconButton(
-              icon: Icon(Icons.add),
-              onPressed: () {
-                // todo add friend
-              },
-            ),
-          ],
-          title: Text(
-            "消息",
-            style: TextStyle(color: Colors.black),
-          ),
+        appBar: EnterpriseTitleBar.back(
+          title: StrRes.message,
+          backgroundColor: PageStyle.c_F8F8F8,
+          showShadow: false,
         ),
         // two layer, one is background, one is content
         body: Stack(children: [
