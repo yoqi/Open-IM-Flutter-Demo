@@ -85,11 +85,11 @@ dependency_overrides:
   camera_android: 0.9.7+1
   camera_avfoundation: 0.9.7+1
   ffi: 2.0.1
-  pull_to_refresh: ^2.0.0
-  # pull_to_refresh:
-  #   git:
-  #     url: https://github.com/miquelbeltran/flutter_pulltorefresh
-  #     ref: master
+  # pull_to_refresh: ^2.0.0
+  pull_to_refresh:
+    git:
+      url: https://github.com/miquelbeltran/flutter_pulltorefresh
+      ref: master
 
 flutter:
 
