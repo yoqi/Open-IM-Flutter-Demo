@@ -161,9 +161,7 @@ class MessagePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text("官方",
-                    style: TextStyle(
-                      color: Colors.white,
-                    )),
+                    style: TextStyle(color: Colors.white, fontSize: 10)),
               )
             ],
           ),
@@ -186,7 +184,6 @@ class MessagePage extends StatelessWidget {
           subtitle: Text("747478332333订单已发货"),
           trailing: Text("刚刚"),
         ),
-        
       ],
     );
   }
