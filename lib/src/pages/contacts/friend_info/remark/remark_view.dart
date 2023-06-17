@@ -17,15 +17,29 @@ class FriendRemarkPage extends StatelessWidget {
       child: Scaffold(
         appBar: EnterpriseTitleBar.back(
           title: StrRes.setupRemark,
+          showShadow: false,
+          backgroundColor: PageStyle.c_F8F8F8,
         ),
-        backgroundColor: PageStyle.c_FFFFFF,
+        backgroundColor: PageStyle.c_F8F8F8,
         body: Column(
+          // mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 24.h,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 24, right: 24),
+              child: Text(
+                "设置备注",
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            ),
             Container(
               margin: EdgeInsets.only(
-                left: 22.w,
-                right: 22.w,
-                top: 40.h,
+                left: 24.w,
+                right: 24.w,
+                top: 12.h,
               ),
               padding: EdgeInsets.only(bottom: 7.h),
               decoration: BoxDecoration(
@@ -44,12 +58,14 @@ class FriendRemarkPage extends StatelessWidget {
                       controller: logic.inputCtrl,
                       // focusNode: logic.focusNode,
                       autofocus: true,
+                      maxLines: 3,
                       textAlign: TextAlign.left,
                       decoration: InputDecoration(
                         border: InputBorder.none,
                         contentPadding: EdgeInsets.zero,
                         isDense: true,
-                        // hintText: logic.info.comment,
+                        hintText: "请输入",
+                        hintStyle: PageStyle.ts_000000_16sp,
                       ),
                     ),
                   ),
