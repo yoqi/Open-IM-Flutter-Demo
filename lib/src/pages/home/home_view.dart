@@ -25,7 +25,7 @@ class HomePage extends StatelessWidget {
                 child: IndexedStack(
                   index: logic.index.value,
                   children: [
-                    MessagePage(),
+                    ConversationPage(),
                     ContactsPage(),
                     // WorkbenchPage(),
                     MinePage(),
