@@ -11,8 +11,8 @@ import 'core/controller/im_controller.dart';
 import 'core/controller/permission_controller.dart';
 import 'core/controller/push_controller.dart';
 
-class EnterpriseChatApp extends StatelessWidget {
-  const EnterpriseChatApp({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
