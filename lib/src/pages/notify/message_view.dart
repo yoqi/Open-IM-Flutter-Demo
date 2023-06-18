@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:openim_demo/src/res/strings.dart';
-import 'package:openim_demo/src/res/styles.dart';
-import 'package:openim_demo/src/widgets/titlebar.dart';
 
 class MessagePage extends StatelessWidget {
   const MessagePage({Key? key}) : super(key: key);
@@ -9,10 +6,25 @@ class MessagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: EnterpriseTitleBar.back(
-          title: StrRes.message,
-          backgroundColor: PageStyle.c_F8F8F8,
-          showShadow: false,
+        appBar: AppBar(
+          leading: IconButton(
+            icon: Icon(Icons.arrow_back_ios, color: Color(0xffFFB300)),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          ),
+          actions: [
+            IconButton(
+              icon: Icon(Icons.add),
+              onPressed: () {
+                // todo add friend
+              },
+            ),
+          ],
+          title: Text(
+            "消息",
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         // two layer, one is background, one is content
         body: Stack(children: [
@@ -149,7 +161,9 @@ class MessagePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(4),
                 ),
                 child: Text("官方",
-                    style: TextStyle(color: Colors.white, fontSize: 10)),
+                    style: TextStyle(
+                      color: Colors.white,
+                    )),
               )
             ],
           ),
@@ -172,6 +186,7 @@ class MessagePage extends StatelessWidget {
           subtitle: Text("747478332333订单已发货"),
           trailing: Text("刚刚"),
         ),
+        
       ],
     );
   }
