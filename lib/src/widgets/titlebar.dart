@@ -139,8 +139,8 @@ class EnterpriseTitleBar extends StatelessWidget
                               )
                             : Image.asset(
                                 ImageRes.ic_back,
-                                width: 12.w,
-                                height: 20.h,
+                                width: 28.w,
+                                height: 28.h,
                               ),
                       ),
                     ),
