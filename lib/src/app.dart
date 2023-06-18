@@ -11,8 +11,8 @@ import 'core/controller/im_controller.dart';
 import 'core/controller/permission_controller.dart';
 import 'core/controller/push_controller.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class EnterpriseChatApp extends StatelessWidget {
+  const EnterpriseChatApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         },
         supportedLocales: [
           const Locale('zh', 'CN'),
-          // const Locale('en', 'US'),
+          const Locale('en', 'US'),
         ],
         getPages: AppPages.routes,
         initialBinding: InitBinding(),

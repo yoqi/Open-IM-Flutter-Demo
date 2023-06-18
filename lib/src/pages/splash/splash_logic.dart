@@ -48,8 +48,6 @@ class SplashLogic extends GetxController {
       pushLogic.login(uid!);
       print('---------jpush login success----');
       AppNavigator.startMain();
-      // qmd login
-      
     } catch (e) {
       IMWidget.showToast('$e');
       AppNavigator.startLogin();

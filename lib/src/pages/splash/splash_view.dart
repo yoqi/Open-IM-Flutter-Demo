@@ -16,13 +16,13 @@ class SplashPage extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
-            top: 50.h,
+            top: 603.h,
             width: 375.w,
             child: Center(
               child: Image.asset(
                 ImageRes.ic_app,
-                width: 339.w,
-                height: 490.h,
+                width: 52.w,
+                height: 53.h,
               ),
             ),
           ),

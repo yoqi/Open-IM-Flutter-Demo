@@ -19,7 +19,7 @@ Future<Null> main() async {
 
   runZonedGuarded(
     () {
-      Config.init(() => runApp(MyApp()));
+      Config.init(() => runApp(EnterpriseChatApp()));
     },
     (Object error, StackTrace stackTrace) {
       print("Error FROM OUT_SIDE FRAMEWORK ");

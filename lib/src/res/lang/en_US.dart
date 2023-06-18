@@ -112,7 +112,6 @@ const Map<String, String> en_US = {
   "scanDescribe": "Scan QR code",
   "newFriendApplication": "New friend request",
   "accept": "Accept",
-  "expired": "Expired",
   "greet": "Greet",
   "addSuccessfully": "Added successfully",
   "addFailed": "Added failed",
