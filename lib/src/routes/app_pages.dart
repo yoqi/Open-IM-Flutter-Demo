@@ -153,14 +153,14 @@ class AppPages {
       page: () => ChatPage(),
       binding: ChatBinding(),
     ),
-    GetPage(
-        name: AppRoutes.MESSAGE,
-        page: () => MessagePage(),
-        binding: MessageBinding()),
-    GetPage(
-        name: AppRoutes.INTERACTIVE,
-        page: () => InteractivePage(),
-        binding: InteractiveBinding()),
+    // GetPage(
+    //     name: AppRoutes.MESSAGE,
+    //     page: () => MessagePage(),
+    //     binding: MessageBinding()),
+    // GetPage(
+    //     name: AppRoutes.INTERACTIVE,
+    //     page: () => InteractivePage(),
+    //     binding: InteractiveBinding()),
     GetPage(
       name: AppRoutes.CHAT_SETUP,
       page: () => ChatSetupPage(),
