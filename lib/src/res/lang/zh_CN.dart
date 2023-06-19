@@ -29,7 +29,7 @@ const Map<String, String> zh_CN = {
   'plsWriteRealName': '请填写真实姓名',
   'enterApp': '进入七亩地',
   'home': '首页',
-  'contacts': '通讯录',
+  'contacts': '消息',
   'mine': '我的',
   'search': '搜索',
   'top': '置顶',

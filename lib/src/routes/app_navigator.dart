@@ -186,6 +186,10 @@ class AppNavigator {
     Get.toNamed(AppRoutes.FRIEND_LIST);
   }
 
+  static void startMessage(){
+    Get.toNamed(AppRoutes.MESSAGE);
+  }
+
   static void startGroupList() {
     Get.toNamed(AppRoutes.GROUP_LIST);
   }

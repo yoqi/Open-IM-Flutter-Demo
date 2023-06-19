@@ -83,6 +83,8 @@ import 'package:openim_demo/src/pages/mine/setup_language/setup_language_binding
 import 'package:openim_demo/src/pages/mine/setup_language/setup_language_view.dart';
 import 'package:openim_demo/src/pages/mine/setup_username/setup_name_binding.dart';
 import 'package:openim_demo/src/pages/mine/setup_username/setup_name_view.dart';
+import 'package:openim_demo/src/pages/notify/message_binding.dart';
+import 'package:openim_demo/src/pages/notify/message_view.dart';
 import 'package:openim_demo/src/pages/organization/organization_binding.dart';
 import 'package:openim_demo/src/pages/organization/organization_view.dart';
 import 'package:openim_demo/src/pages/register/register_binding.dart';
@@ -149,6 +151,10 @@ class AppPages {
       page: () => ChatPage(),
       binding: ChatBinding(),
     ),
+    GetPage(
+        name: AppRoutes.MESSAGE,
+        page: () => MessagePage(),
+        binding: MessageBinding()),
     GetPage(
       name: AppRoutes.CHAT_SETUP,
       page: () => ChatSetupPage(),

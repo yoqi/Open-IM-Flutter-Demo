@@ -56,20 +56,25 @@ class ContactsPage extends StatelessWidget {
                 label: StrRes.myFriend,
                 onTap: () => logic.toMyFriendList(),
               ),
-              _buildGroupItem(
-                icon: ImageRes.ic_myGroup,
-                label: StrRes.myGroup,
-                onTap: () => logic.toMyGroupList(),
-                showUnderline: false,
+                           _buildGroupItem(
+                icon: ImageRes.ic_myFriend,
+                label: "消息",
+                onTap: () => logic.toMessage(),
               ),
-              _buildSubTitle(),
-              SliverList(
-                delegate: SliverChildBuilderDelegate(
-                  (context, index) => _buildContactsItem(
-                      logic.frequentContacts.elementAt(index)),
-                  childCount: logic.frequentContacts.length,
-                ),
-              ),
+              // _buildGroupItem(
+              //   icon: ImageRes.ic_myGroup,
+              //   label: StrRes.myGroup,
+              //   onTap: () => logic.toMyGroupList(),
+              //   showUnderline: false,
+              // ),
+              // _buildSubTitle(),
+              // SliverList(
+              //   delegate: SliverChildBuilderDelegate(
+              //     (context, index) => _buildContactsItem(
+              //         logic.frequentContacts.elementAt(index)),
+              //     childCount: logic.frequentContacts.length,
+              //   ),
+              // ),
             ],
           )),
     );
