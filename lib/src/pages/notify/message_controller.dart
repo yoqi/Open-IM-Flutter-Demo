@@ -35,7 +35,16 @@ class MessageController extends GetxController {
   void toScanQrcode() {
     AppNavigator.startScanQrcode();
   }
-
+  void toInteractionMessage(){
+    AppNavigator.startInteractive();
+  }
+  void toShopMessage(){
+    AppNavigator.startShopMessage();
+  }
+ 
+  void toSystemMessage(){
+    AppNavigator.startMessage();
+  }
   void toViewCallRecords() {
     AppNavigator.startCallRecords();
   }

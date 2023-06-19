@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:openim_demo/src/res/styles.dart';
 import 'package:openim_demo/src/widgets/titlebar.dart';
@@ -33,12 +31,65 @@ class InteractivePage extends StatelessWidget {
                           "assets/images/message-interaction-icon.png"),
                     ),
                   ),
-                  title: Text("互动通知"),
-                  subtitle: Text("往事随风 赞了你的视频",
+                  title: Text("往事随风"),
+                  subtitle: Text("赞了你的视频",
                       style: TextStyle(fontSize: 12, color: Color(0xffABA89D))),
-                  trailing: Text(
-                    "刚刚",
-                    style: TextStyle(fontSize: 12, color: Color(0xffDBDBDB)),
+                  trailing: Container(
+                    width: 100,
+                    height: 48,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            "1月17日",
+                            style: TextStyle(
+                                fontSize: 12, color: Color(0xffDBDBDB)),
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Image.asset(
+                            "assets/images/userindex-bg.png",
+                            width: 36,
+                            height: 48,
+                            fit: BoxFit.cover,
+                          ),
+                        ]),
+                  ),
+                ),
+                ListTile(
+                  leading: Container(
+                    width: 48,
+                    height: 48,
+                    child: CircleAvatar(
+                      backgroundImage: AssetImage(
+                          "assets/images/message-interaction-icon.png"),
+                    ),
+                  ),
+                  title: Text("往事随风"),
+                  subtitle: Text("评论了你：这风景太美了吧！有空带我去…",
+                      style: TextStyle(fontSize: 12, color: Color(0xffABA89D))),
+                  trailing: Container(
+                    width: 100,
+                    height: 48,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            "1月17日",
+                            style: TextStyle(
+                                fontSize: 12, color: Color(0xffDBDBDB)),
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Image.asset(
+                            "assets/images/userindex-bg.png",
+                            width: 36,
+                            height: 48,
+                            fit: BoxFit.cover,
+                          ),
+                        ]),
                   ),
                 ),
                 ListTile(
@@ -51,11 +102,29 @@ class InteractivePage extends StatelessWidget {
                     ),
                   ),
                   title: Text("互动通知"),
-                  subtitle: Text("往事随风 赞了你的视频",
+                  subtitle: Text("回复了你：好的，我会跟上你的",
                       style: TextStyle(fontSize: 12, color: Color(0xffABA89D))),
-                  trailing: Text(
-                    "刚刚",
-                    style: TextStyle(fontSize: 12, color: Color(0xffDBDBDB)),
+                  trailing: Container(
+                    width: 100,
+                    height: 48,
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            "1月17日",
+                            style: TextStyle(
+                                fontSize: 12, color: Color(0xffDBDBDB)),
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Image.asset(
+                            "assets/images/userindex-bg.png",
+                            width: 36,
+                            height: 48,
+                            fit: BoxFit.cover,
+                          ),
+                        ]),
                   ),
                 ),
                 ListTile(
@@ -67,29 +136,39 @@ class InteractivePage extends StatelessWidget {
                           "assets/images/message-interaction-icon.png"),
                     ),
                   ),
-                  title: Text("互动通知"),
-                  subtitle: Text("往事随风 赞了你的视频",
-                      style: TextStyle(fontSize: 12, color: Color(0xffABA89D))),
-                  trailing: Text(
-                    "刚刚",
-                    style: TextStyle(fontSize: 12, color: Color(0xffDBDBDB)),
+                  title: Text(
+                    "往事随风",
+                    style: TextStyle(color: Colors.black, fontSize: 16),
                   ),
-                ),
-                ListTile(
-                  leading: Container(
-                    width: 48,
+                  subtitle: Text("关注了你",
+                      style: TextStyle(fontSize: 12, color: Color(0xffABA89D))),
+                  trailing: Container(
+                    width: 200,
                     height: 48,
-                    child: CircleAvatar(
-                      backgroundImage: AssetImage(
-                          "assets/images/message-interaction-icon.png"),
-                    ),
-                  ),
-                  title: Text("互动通知"),
-                  subtitle: Text("往事随风 赞了你的视频",
-                      style: TextStyle(fontSize: 12, color: Color(0xffABA89D))),
-                  trailing: Text(
-                    "刚刚",
-                    style: TextStyle(fontSize: 12, color: Color(0xffDBDBDB)),
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Text(
+                            "1月17日",
+                            style: TextStyle(
+                                fontSize: 12, color: Color(0xffDBDBDB)),
+                          ),
+                          SizedBox(
+                            width: 16,
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                color: Color(0xFFFFB300),
+                                borderRadius: BorderRadius.circular(16)),
+                            padding: EdgeInsets.only(
+                                left: 12, top: 8, right: 12, bottom: 8),
+                            child: Text(
+                              "回关",
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 16),
+                            ),
+                          )
+                        ]),
                   ),
                 ),
               ],

@@ -61,26 +61,26 @@ class ContactsPage extends StatelessWidget {
                 label: "消息",
                 onTap: () => logic.toMessage(),
               ),
-              _buildGroupItem(
-                icon: ImageRes.ic_myFriend,
-                label: "互动通知",
-                onTap: () => logic.toInteracive(),
-              ),
-              _buildGroupItem(
-                icon: ImageRes.ic_myFriend,
-                label: "我的店铺",
-                onTap: () => logic.toShopMessage(),
-              ),
-              _buildGroupItem(
-                icon: ImageRes.ic_myFriend,
-                label: "订单通知",
-                onTap: () => logic.toShopMessage(),
-              ),
-              _buildGroupItem(
-                icon: ImageRes.ic_myFriend,
-                label: "我的咨询",
-                onTap: () => logic.toShopMessage(),
-              ),
+              // _buildGroupItem(
+              //   icon: ImageRes.ic_myFriend,
+              //   label: "互动通知",
+              //   onTap: () => logic.toInteracive(),
+              // ),
+              // _buildGroupItem(
+              //   icon: ImageRes.ic_myFriend,
+              //   label: "我的店铺",
+              //   onTap: () => logic.toShopMessage(),
+              // ),
+              // _buildGroupItem(
+              //   icon: ImageRes.ic_myFriend,
+              //   label: "订单通知",
+              //   onTap: () => logic.toShopMessage(),
+              // ),
+              // _buildGroupItem(
+              //   icon: ImageRes.ic_myFriend,
+              //   label: "我的咨询",
+              //   onTap: () => logic.toShopMessage(),
+              // ),
               // _buildGroupItem(
               //   icon: ImageRes.ic_myGroup,
               //   label: StrRes.myGroup,

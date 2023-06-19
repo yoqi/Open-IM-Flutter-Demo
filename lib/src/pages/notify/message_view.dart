@@ -195,6 +195,9 @@ class MessagePage extends StatelessWidget {
           style: TextStyle(fontSize: 12, color: Color(0xffABA89D)),
         ),
         ListTile(
+          onTap: () {
+            messageController.toSystemMessage();
+          },
           leading: Container(
             width: 48,
             height: 48,
@@ -244,6 +247,9 @@ class MessagePage extends StatelessWidget {
           ),
         ),
         ListTile(
+          onTap: () {
+            messageController.toInteractionMessage();
+          },
           leading: Container(
             width: 48,
             height: 48,
@@ -261,6 +267,9 @@ class MessagePage extends StatelessWidget {
           ),
         ),
         ListTile(
+          onTap: () {
+            messageController.toShopMessage();
+          },
           leading: Container(
             width: 48,
             height: 48,
