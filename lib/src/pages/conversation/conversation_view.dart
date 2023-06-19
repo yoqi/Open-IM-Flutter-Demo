@@ -27,8 +27,6 @@ class ConversationPage extends StatelessWidget {
           // resizeToAvoidBottomInset: false,
           // appBar: AppBar(),
           appBar: EnterpriseTitleBar.conversationTitle(
-            // title: 'xx信息技术（成都）有限公司',
-            // subTitle: imLogic.userInfo.value.getShowName(),
             avatarUrl: imLogic.userInfo.value.faceURL,
             actions: _buildActions(),
             subTitleView: _buildSubTitleView(),
