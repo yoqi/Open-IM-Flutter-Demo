@@ -56,7 +56,7 @@ const Map<String, String> zh_CN = {
   "multiChoice": "多选",
   "translation": "翻译",
   "download": "下载",
-  "chatSetup": "聊天设置",
+  "chatSetup": "好友设置",
   "findChatHistory": "查找聊天记录",
   "topContacts": "置顶联系人",
   "notDisturb": "消息免打扰",

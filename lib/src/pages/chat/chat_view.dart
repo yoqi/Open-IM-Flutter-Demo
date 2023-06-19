@@ -12,7 +12,7 @@ import 'chat_logic.dart';
 
 class ChatPage extends StatelessWidget {
   final logic = Get.find<ChatLogic>();
-  
+
   Widget _itemView(index) => ChatItemView(
         key: logic.itemKey(index),
         index: index,
@@ -94,6 +94,8 @@ class ChatPage extends StatelessWidget {
         ],
         customItemBuilder: _buildCustomItemView,
         enabledReadStatus: logic.enabledReadStatus(index),
+        leftBubbleColor: Color(0xFFFFF6E2),
+        rightBubbleColor: Color(0xFFFFB300),
       );
 
   @override
@@ -124,7 +126,8 @@ class ChatPage extends StatelessWidget {
                             itemCount: logic.messageList.length,
                             controller: logic.autoCtrl,
                             onLoad: () => logic.getHistoryMsgList(),
-                            itemBuilder: (_, index) => Obx(() => _itemView(index)),
+                            itemBuilder: (_, index) =>
+                                Obx(() => _itemView(index)),
                           ),
                         ),
                         ChatInputBoxView(
@@ -159,7 +162,10 @@ class ChatPage extends StatelessWidget {
                           onClearQuote: () => logic.setQuoteMsg(-1),
                           multiMode: logic.multiSelMode.value,
                           focusNode: logic.focusNode,
-                          inputFormatters: [AtTextInputFormatter(logic.openAtList)],
+                          inputFormatters: [
+                            AtTextInputFormatter(logic.openAtList)
+                          ],
+                          background: Color(0xFFF8F8F8),
                         ),
                       ],
                     ),
@@ -193,7 +199,9 @@ class ChatPage extends StatelessWidget {
       Row(
         children: [
           Image.asset(
-            type == 'voice' ? ImageRes.ic_voiceCallMsg : ImageRes.ic_videoCallMsg,
+            type == 'voice'
+                ? ImageRes.ic_voiceCallMsg
+                : ImageRes.ic_videoCallMsg,
             width: 20.h,
             height: 20.h,
           ),
