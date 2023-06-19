@@ -1,74 +1,108 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_openim_widget/flutter_openim_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:openim_demo/src/core/controller/im_controller.dart';
+import 'package:openim_demo/src/pages/conversation/conversation_logic.dart';
 import 'package:openim_demo/src/res/images.dart';
 import 'package:openim_demo/src/res/strings.dart';
 import 'package:openim_demo/src/res/styles.dart';
 import 'package:openim_demo/src/widgets/titlebar.dart';
+import 'package:openim_demo/src/widgets/touch_close_keyboard.dart';
 
 /// Description: message page
 /// Time       : 06/19/2023 Monday
 /// Author     : liuyuqi.gov@msn.cn
 class MessagePage extends StatelessWidget {
-  const MessagePage({Key? key}) : super(key: key);
+  MessagePage({Key? key}) : super(key: key);
+
+  final logic = Get.find<ConversationLogic>();
+  final imLogic = Get.find<IMController>();
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: EnterpriseTitleBar.back(
-          title: StrRes.message,
-          backgroundColor: PageStyle.c_F8F8F8,
-          showShadow: false,
-          actions: [
-            TitleImageButton(
-              imageStr: ImageRes.ic_addBlack,
-              imageWidth: 22,
-              imageHeight: 22,
-              color: Color(0xFF333333),
-              onTap: () {
-                showDialog(
-                    context: context,
-                    builder: (context) {
-                      return AlertDialog(
-                        title: Text("提示"),
-                        content: Text("add功能暂未开放"),
-                        actions: [
-                          TextButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                              child: Text("确定"))
-                        ],
-                      );
-                    });
-              },
+    return Obx(
+      () => TouchCloseSoftKeyboard(
+        child: Scaffold(
+            appBar: EnterpriseTitleBar.back(
+              title: StrRes.message,
+              backgroundColor: PageStyle.c_F8F8F8,
+              showShadow: false,
+              actions: [
+                PopButton(
+                  popCtrl: logic.popCtrl,
+                  menuBgColor: Color(0xFFFFFFFF),
+                  showArrow: false,
+                  menuBgShadowColor: Color(0xFF000000).withOpacity(0.16),
+                  menuBgShadowBlurRadius: 6,
+                  menuBgShadowSpreadRadius: 2,
+                  menuItemTextStyle: PageStyle.ts_333333_14sp,
+                  menuItemHeight: 44.h,
+                  // menuItemWidth: 170.w,
+                  menuItemPadding: EdgeInsets.only(left: 20.w, right: 30.w),
+                  menuBgRadius: 6,
+                  // menuItemIconSize: 24.h,
+                  menus: [
+                    PopMenuInfo(
+                      text: StrRes.scan,
+                      icon: ImageRes.ic_popScan,
+                      onTap: () => logic.toScanQrcode(),
+                    ),
+                    PopMenuInfo(
+                      text: StrRes.addFriend,
+                      icon: ImageRes.ic_popAddFriends,
+                      onTap: () => logic.toAddFriend(),
+                    ),
+                    PopMenuInfo(
+                      text: StrRes.addGroup,
+                      icon: ImageRes.ic_popAddGroup,
+                      onTap: () => logic.toAddGroup(),
+                    ),
+                    PopMenuInfo(
+                      text: StrRes.launchGroup,
+                      icon: ImageRes.ic_popLaunchGroup,
+                      onTap: () => logic.createGroup(),
+                    ),
+                  ],
+                  child: TitleImageButton(
+                    imageStr: ImageRes.ic_addBlack,
+                    imageHeight: 24.h,
+                    imageWidth: 23.w,
+                    // onTap: (){},
+                    // onTap: onClickAddBtn,
+                    // height: 50.h,
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-        // two layer, one is background, one is content
-        body: Stack(children: [
-          // Container(
-          //   color: Color(0xffFFB300),
-          //   child: Column(children: [
-          //     Image.asset(
-          //       "assets/images/ic_account_setup.webp",
-          //       width: 100,
-          //       height: 100,
-          //     ),
-          //     Text("暂无消息"),
-          //   ]),
-          // ),
-          Container(
-              alignment: Alignment.topLeft,
-              margin: EdgeInsets.only(top: 16, left: 16, right: 16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                // borderRadius: BorderRadius.only(
-                //     topLeft: Radius.circular(20),
-                //     topRight: Radius.circular(20))
-              ),
-              child: ListView(children: [
-                buildMessageItem(context),
-              ]))
-        ]));
+            // two layer, one is background, one is content
+            body: Stack(children: [
+              // Container(
+              //   color: Color(0xffFFB300),
+              //   child: Column(children: [
+              //     Image.asset(
+              //       "assets/images/ic_account_setup.webp",
+              //       width: 100,
+              //       height: 100,
+              //     ),
+              //     Text("暂无消息"),
+              //   ]),
+              // ),
+              Container(
+                  alignment: Alignment.topLeft,
+                  margin: EdgeInsets.only(top: 16, left: 16, right: 16),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    // borderRadius: BorderRadius.only(
+                    //     topLeft: Radius.circular(20),
+                    //     topRight: Radius.circular(20))
+                  ),
+                  child: ListView(children: [
+                    buildMessageItem(context),
+                  ]))
+            ])),
+      ),
+    );
   }
 
   // format time
