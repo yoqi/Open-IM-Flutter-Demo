@@ -89,6 +89,8 @@ import 'package:openim_demo/src/pages/notify/interactive_binding.dart';
 import 'package:openim_demo/src/pages/notify/interactive_view.dart';
 import 'package:openim_demo/src/pages/notify/message_binding.dart';
 import 'package:openim_demo/src/pages/notify/message_view.dart';
+import 'package:openim_demo/src/pages/notify/order_message_binding.dart';
+import 'package:openim_demo/src/pages/notify/order_message_view.dart';
 import 'package:openim_demo/src/pages/notify/shop_message_binding.dart';
 import 'package:openim_demo/src/pages/notify/shop_message_view.dart';
 import 'package:openim_demo/src/pages/notify/system_message_binding.dart';
@@ -128,6 +130,11 @@ class AppPages {
       name: AppRoutes.REGISTER,
       page: () => RegisterPage(),
       binding: RegisterBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.ORDERMESSAGE,
+      page: () => OrderMessagePage(),
+      binding: OrderMessageBinding(),
     ),
     GetPage(
       name: AppRoutes.REGISTER_VERIFY_PHONE,

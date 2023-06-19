@@ -348,6 +348,9 @@ class AppNavigator {
     Get.toNamed(AppRoutes.ABOUT_US);
   }
 
+  static void startOrderMessage(){
+    Get.toNamed(AppRoutes.ORDERMESSAGE);
+  }
   static void startAddMyMethod() {
     Get.toNamed(AppRoutes.ADD_MY_METHOD);
   }

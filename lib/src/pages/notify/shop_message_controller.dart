@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:openim_demo/src/routes/app_navigator.dart';
+import 'package:openim_demo/src/routes/app_pages.dart';
 
 
 class ShopMessageController extends GetxController {
@@ -7,5 +9,9 @@ class ShopMessageController extends GetxController {
   @override
   void onInit() {
     super.onInit();
+  }
+
+  void goToOrderMessage() {
+     AppNavigator.startOrderMessage();
   }
 }
