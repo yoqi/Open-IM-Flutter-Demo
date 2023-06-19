@@ -3,7 +3,7 @@ import 'package:flutter_openim_widget/flutter_openim_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:openim_demo/src/core/controller/im_controller.dart';
-import 'package:openim_demo/src/pages/conversation/conversation_logic.dart';
+import 'package:openim_demo/src/pages/notify/message_controller.dart';
 import 'package:openim_demo/src/res/images.dart';
 import 'package:openim_demo/src/res/strings.dart';
 import 'package:openim_demo/src/res/styles.dart';
@@ -16,7 +16,7 @@ import 'package:openim_demo/src/widgets/touch_close_keyboard.dart';
 class MessagePage extends StatelessWidget {
   MessagePage({Key? key}) : super(key: key);
 
-  final logic = Get.find<ConversationLogic>();
+  final logic = Get.find<MessageController>();
   final imLogic = Get.find<IMController>();
 
   @override
@@ -126,7 +126,6 @@ class MessagePage extends StatelessWidget {
     }
   }
 
-  // build notify badge
   Widget buildNotifyBadge(bool isRead, int count) {
     if (count == 0) {
       return SizedBox.shrink();
@@ -196,7 +195,6 @@ class MessagePage extends StatelessWidget {
 
   buildMessageItem(BuildContext context) {
     return Column(
-      // mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
