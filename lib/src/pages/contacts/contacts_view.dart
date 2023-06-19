@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_openim_sdk/flutter_openim_sdk.dart';
 import 'package:flutter_openim_widget/flutter_openim_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -37,66 +36,66 @@ class ContactsPage extends StatelessWidget {
           ),
         ],
       ),
-      body: Obx(() => CustomScrollView(
-            slivers: [
-              _buildGroupItem(
-                icon: ImageRes.ic_newFriend,
-                label: StrRes.newFriend,
-                onTap: () => logic.toFriendApplicationList(),
-                count: homeLogic.unhandledFriendApplicationCount.value,
-              ),
-              _buildGroupItem(
-                icon: ImageRes.ic_groupApplicationNotification,
-                label: StrRes.groupApplicationNotification,
-                onTap: () => logic.viewGroupApplication(),
-                count: homeLogic.unhandledGroupApplicationCount.value,
-              ),
-              _buildGroupItem(
-                icon: ImageRes.ic_myFriend,
-                label: StrRes.myFriend,
-                onTap: () => logic.toMyFriendList(),
-              ),
-              _buildGroupItem(
-                icon: ImageRes.ic_myFriend,
-                label: "消息",
-                onTap: () => logic.toMessage(),
-              ),
-              // _buildGroupItem(
-              //   icon: ImageRes.ic_myFriend,
-              //   label: "互动通知",
-              //   onTap: () => logic.toInteracive(),
-              // ),
-              // _buildGroupItem(
-              //   icon: ImageRes.ic_myFriend,
-              //   label: "我的店铺",
-              //   onTap: () => logic.toShopMessage(),
-              // ),
-              // _buildGroupItem(
-              //   icon: ImageRes.ic_myFriend,
-              //   label: "订单通知",
-              //   onTap: () => logic.toShopMessage(),
-              // ),
-              // _buildGroupItem(
-              //   icon: ImageRes.ic_myFriend,
-              //   label: "我的咨询",
-              //   onTap: () => logic.toShopMessage(),
-              // ),
-              // _buildGroupItem(
-              //   icon: ImageRes.ic_myGroup,
-              //   label: StrRes.myGroup,
-              //   onTap: () => logic.toMyGroupList(),
-              //   showUnderline: false,
-              // ),
-              // _buildSubTitle(),
-              // SliverList(
-              //   delegate: SliverChildBuilderDelegate(
-              //     (context, index) => _buildContactsItem(
-              //         logic.frequentContacts.elementAt(index)),
-              //     childCount: logic.frequentContacts.length,
-              //   ),
-              // ),
-            ],
-          )),
+      body: CustomScrollView(
+        slivers: [
+          // _buildGroupItem(
+          //   icon: ImageRes.ic_newFriend,
+          //   label: StrRes.newFriend,
+          //   onTap: () => logic.toFriendApplicationList(),
+          //   count: homeLogic.unhandledFriendApplicationCount.value,
+          // ),
+          // _buildGroupItem(
+          //   icon: ImageRes.ic_groupApplicationNotification,
+          //   label: StrRes.groupApplicationNotification,
+          //   onTap: () => logic.viewGroupApplication(),
+          //   count: homeLogic.unhandledGroupApplicationCount.value,
+          // ),
+          // _buildGroupItem(
+          //   icon: ImageRes.ic_myFriend,
+          //   label: StrRes.myFriend,
+          //   onTap: () => logic.toMyFriendList(),
+          // ),
+          _buildGroupItem(
+            icon: ImageRes.ic_myFriend,
+            label: "消息",
+            onTap: () => logic.toMessage(),
+          ),
+          // _buildGroupItem(
+          //   icon: ImageRes.ic_myFriend,
+          //   label: "互动通知",
+          //   onTap: () => logic.toInteracive(),
+          // ),
+          // _buildGroupItem(
+          //   icon: ImageRes.ic_myFriend,
+          //   label: "我的店铺",
+          //   onTap: () => logic.toShopMessage(),
+          // ),
+          // _buildGroupItem(
+          //   icon: ImageRes.ic_myFriend,
+          //   label: "订单通知",
+          //   onTap: () => logic.toShopMessage(),
+          // ),
+          // _buildGroupItem(
+          //   icon: ImageRes.ic_myFriend,
+          //   label: "我的咨询",
+          //   onTap: () => logic.toShopMessage(),
+          // ),
+          // _buildGroupItem(
+          //   icon: ImageRes.ic_myGroup,
+          //   label: StrRes.myGroup,
+          //   onTap: () => logic.toMyGroupList(),
+          //   showUnderline: false,
+          // ),
+          // _buildSubTitle(),
+          // SliverList(
+          //   delegate: SliverChildBuilderDelegate(
+          //     (context, index) => _buildContactsItem(
+          //         logic.frequentContacts.elementAt(index)),
+          //     childCount: logic.frequentContacts.length,
+          //   ),
+          // ),
+        ],
+      ),
     );
   }
 

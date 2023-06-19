@@ -21,7 +21,7 @@ class MessageController extends GetxController {
   }
 
   void toAddFriend() {
-    AppNavigator.startAddFriend();
+    AppNavigator.startFriendApplicationList();
   }
 
   void toAddGroup() {
@@ -35,20 +35,23 @@ class MessageController extends GetxController {
   void toScanQrcode() {
     AppNavigator.startScanQrcode();
   }
-  void toInteractionMessage(){
+
+  void toInteractionMessage() {
     AppNavigator.startInteractive();
   }
-  void toShopMessage(){
+
+  void toShopMessage() {
     AppNavigator.startShopMessage();
   }
 
-  void toConsultMessage(){
+  void toConsultMessage() {
     AppNavigator.startConsultingMessage();
   }
- 
-  void toSystemMessage(){
+
+  void toSystemMessage() {
     AppNavigator.startSystemMessage();
   }
+
   void toViewCallRecords() {
     AppNavigator.startCallRecords();
   }

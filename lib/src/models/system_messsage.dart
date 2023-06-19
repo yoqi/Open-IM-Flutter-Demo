@@ -1,3 +1,4 @@
+
 class SystemMessage {
   int type = 1; //1系统消息，2审核消息，3订单通知
   String title = "";

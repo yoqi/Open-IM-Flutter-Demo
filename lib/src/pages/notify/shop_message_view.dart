@@ -76,6 +76,9 @@ class ShopMessagePage extends StatelessWidget {
             ]),
           ),
           ListTile(
+            onTap: () {
+              shopMessaegController.goToSystemMessage();
+            },
             tileColor: Colors.white,
             leading: Image.asset(
               "assets/images/message-service-icon.png",
@@ -115,9 +118,6 @@ class ShopMessagePage extends StatelessWidget {
                 )
               ],
             ),
-            onTap: () {
-              // shopMessaegController.goToOrderMessage();
-            },
           ),
           Container(
             alignment: Alignment.topLeft,

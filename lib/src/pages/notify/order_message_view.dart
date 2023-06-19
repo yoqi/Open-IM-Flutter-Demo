@@ -11,9 +11,12 @@ class OrderMessagePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<SystemMessage> systemMessage = [
-      SystemMessage(1, "系统消息", "实名认证成功，获得帮扶母分奖励 +30", "2017年7月7日 07:07", false),
       SystemMessage(
-          2, "审核消息", "你发布的短视频《广东美丽乡村-乡村振兴》已通过审核。", "2017年7月7日 07:07", false),
+          1, "订单消息", "你的订单【有机五常大米10kg装】已发货，请注意查收。", "2017年7月7日 07:07", true),
+      SystemMessage(
+          2, "订单消息", "你的订单【有机五常大米10kg装】已发货，请注意查收。", "2017年7月7日 07:07", true),
+      SystemMessage(
+          3, "订单消息", "你的订单【有机五常大米10kg装】已发货，请注意查收。", "2017年7月7日 07:07", true),
       SystemMessage(
           3, "订单消息", "你的订单【有机五常大米10kg装】已发货，请注意查收。", "2017年7月7日 07:07", true),
     ];
@@ -21,7 +24,7 @@ class OrderMessagePage extends StatelessWidget {
     return TouchCloseSoftKeyboard(
         child: Scaffold(
             appBar: EnterpriseTitleBar.back(
-              title: "系统消息",
+              title: "订单通知",
               backgroundColor: PageStyle.c_F8F8F8,
               showShadow: false,
             ),

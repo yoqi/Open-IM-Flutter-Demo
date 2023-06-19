@@ -258,7 +258,23 @@ class MessagePage extends StatelessWidget {
                   AssetImage("assets/images/message-interaction-icon.png"),
             ),
           ),
-          title: Text("互动通知"),
+          title: Row(
+            children: [
+              Text("互动通知"),
+              SizedBox(width: 5),
+              Container(
+                padding: EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 2),
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    colors: [Color(0xffFF0080), Color(0xffFFD500)],
+                  ),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                child: Text("官方",
+                    style: TextStyle(color: Colors.white, fontSize: 10)),
+              )
+            ],
+          ),
           subtitle: Text("往事随风 赞了你的视频",
               style: TextStyle(fontSize: 12, color: Color(0xffABA89D))),
           trailing: Text(
@@ -293,7 +309,7 @@ class MessagePage extends StatelessWidget {
                   ),
                   borderRadius: BorderRadius.circular(4),
                 ),
-                child: Text("官方",
+                child: Text("商家",
                     style: TextStyle(color: Colors.white, fontSize: 10)),
               )
             ],
@@ -324,7 +340,7 @@ class MessagePage extends StatelessWidget {
           ),
         ),
         ListTile(
-          onTap: (){
+          onTap: () {
             messageController.toConsultMessage();
           },
           leading: Container(
@@ -335,25 +351,9 @@ class MessagePage extends StatelessWidget {
                   AssetImage("assets/images/message-service-icon.png"),
             ),
           ),
-          title: Row(
-            children: [
-              Text(
-                "我的咨询",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(width: 5),
-              Container(
-                padding: EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 2),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xff006FFF), Color(0xff00C2FF)],
-                  ),
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Text("官方",
-                    style: TextStyle(color: Colors.white, fontSize: 10)),
-              )
-            ],
+          title: Text(
+            "我的咨询",
+            style: TextStyle(fontSize: 16),
           ),
           subtitle: Text(
             "飞牛乳业：已经和仓库备注加急，预计下…",
@@ -389,25 +389,9 @@ class MessagePage extends StatelessWidget {
                   AssetImage("assets/images/message-newfriends-icon.png"),
             ),
           ),
-          title: Row(
-            children: [
-              Text(
-                "新朋友",
-                style: TextStyle(fontSize: 16),
-              ),
-              SizedBox(width: 5),
-              Container(
-                padding: EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 2),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Color(0xff006FFF), Color(0xff00C2FF)],
-                  ),
-                  borderRadius: BorderRadius.circular(4),
-                ),
-                child: Text("官方",
-                    style: TextStyle(color: Colors.white, fontSize: 10)),
-              )
-            ],
+          title: Text(
+            "新朋友",
+            style: TextStyle(fontSize: 16),
           ),
           subtitle: Text(
             "知足常乐 添加你为好友",
@@ -420,6 +404,9 @@ class MessagePage extends StatelessWidget {
               SizedBox(height: 5),
             ],
           ),
+          onTap: () {
+            messageController.toAddFriend();
+          },
         ),
         SizedBox(height: 16),
         Text(

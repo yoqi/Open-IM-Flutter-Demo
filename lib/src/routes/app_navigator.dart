@@ -186,20 +186,23 @@ class AppNavigator {
     Get.toNamed(AppRoutes.FRIEND_LIST);
   }
 
-  static void startMessage(){
+  static void startMessage() {
     Get.toNamed(AppRoutes.MESSAGE);
   }
-  static void startInteractive(){
+
+  static void startInteractive() {
     Get.toNamed(AppRoutes.INTERACTIVE);
   }
+
   static void startShopMessage() {
     Get.toNamed(AppRoutes.SHOPMESSAGE);
   }
-  static void startConsultingMessage(){
+
+  static void startConsultingMessage() {
     Get.toNamed(AppRoutes.CONSULTINGMESSAGE);
   }
 
-  static void startSystemMessage(){
+  static void startSystemMessage() {
     Get.toNamed(AppRoutes.SYSTEMMESSAGE);
   }
 
@@ -348,9 +351,10 @@ class AppNavigator {
     Get.toNamed(AppRoutes.ABOUT_US);
   }
 
-  static void startOrderMessage(){
+  static void startOrderMessage() {
     Get.toNamed(AppRoutes.ORDERMESSAGE);
   }
+
   static void startAddMyMethod() {
     Get.toNamed(AppRoutes.ADD_MY_METHOD);
   }
