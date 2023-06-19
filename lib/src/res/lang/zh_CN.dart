@@ -171,7 +171,7 @@ const Map<String, String> zh_CN = {
   "myNicknameInGroup": "我在群里的昵称",
   "groupQrcode": "群二维码",
   "groupIDCode": "群ID号",
-  "seeChatHistory": "查看聊天记录",
+  "seeChatHistory": "查找聊天内容",
   "chatTop": "聊天置顶",
   "quitGroup": "退出群聊",
   "modifyGroupName": "修改群聊名称",
