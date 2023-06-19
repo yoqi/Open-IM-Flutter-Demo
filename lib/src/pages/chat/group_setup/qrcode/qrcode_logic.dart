@@ -26,4 +26,8 @@ class GroupQrcodeLogic extends GetxController {
   String buildQRContent() {
     return '${IMQrcodeUrl.joinGroup}${info.groupID}';
   }
+
+  void saveQrcode(){
+    
+  }
 }
