@@ -156,16 +156,21 @@ class InteractivePage extends StatelessWidget {
                           SizedBox(
                             width: 16,
                           ),
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Color(0xFFFFB300),
-                                borderRadius: BorderRadius.circular(16)),
-                            padding: EdgeInsets.only(
-                                left: 12, top: 8, right: 12, bottom: 8),
-                            child: Text(
-                              "回关",
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 16),
+                          InkWell(
+                            onTap: () {
+                              // todo
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: Color(0xFFFFB300),
+                                  borderRadius: BorderRadius.circular(16)),
+                              padding: EdgeInsets.only(
+                                  left: 12, top: 8, right: 12, bottom: 8),
+                              child: Text(
+                                "回关",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 16),
+                              ),
                             ),
                           )
                         ]),
