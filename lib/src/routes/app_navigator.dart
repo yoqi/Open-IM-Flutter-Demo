@@ -196,6 +196,10 @@ class AppNavigator {
     Get.toNamed(AppRoutes.SHOPMESSAGE);
   }
 
+  static void startSystemMessage(){
+    Get.toNamed(AppRoutes.SYSTEMMESSAGE);
+  }
+
   static void startGroupList() {
     Get.toNamed(AppRoutes.GROUP_LIST);
   }

@@ -43,7 +43,7 @@ class MessageController extends GetxController {
   }
  
   void toSystemMessage(){
-    AppNavigator.startMessage();
+    AppNavigator.startSystemMessage();
   }
   void toViewCallRecords() {
     AppNavigator.startCallRecords();

@@ -15,6 +15,7 @@ abstract class AppRoutes {
 
   static const MESSAGE = "/message";
   static const SHOPMESSAGE = "/shop";
+  static const SYSTEMMESSAGE="/system";
   static const INTERACTIVE = "/interactive";
   static const SELECT_CONTACTS = "/select_contacts";
   static const SELECT_CONTACTS_BY_GROUP = "/select_contacts_by_group";
