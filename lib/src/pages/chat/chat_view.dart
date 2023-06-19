@@ -106,15 +106,19 @@ class ChatPage extends StatelessWidget {
             locale: Get.locale,
             builder: (bar) => Obx(() => Scaffold(
                   backgroundColor: PageStyle.c_FFFFFF,
-                  appBar: EnterpriseTitleBar.chatTitle(
+                  appBar: EnterpriseTitleBar.back(
                     title: logic.name.value,
-                    subTitle: logic.getSubTile(),
-                    onClickCallBtn: () => logic.call(),
-                    onClickMoreBtn: () => logic.chatSetup(),
-                    leftButton: logic.multiSelMode.value ? StrRes.cancel : null,
-                    onClose: () => logic.exit(),
-                    showOnlineStatus: logic.showOnlineStatus(),
-                    online: logic.onlineStatus.value,
+                    showShadow: false,
+                    backgroundColor: PageStyle.c_F8F8F8,
+                    actions: [
+                      IconButton(
+                        icon: Icon(
+                          Icons.more_horiz,
+                          color: PageStyle.c_1B72EC,
+                        ),
+                        onPressed: () => logic.chatSetup(),
+                      ),
+                    ],
                   ),
                   body: SafeArea(
                     child: Column(
