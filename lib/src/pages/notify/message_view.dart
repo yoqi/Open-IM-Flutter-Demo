@@ -19,87 +19,80 @@ class MessagePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Obx(
-      () => TouchCloseSoftKeyboard(
-        child: Scaffold(
-            appBar: EnterpriseTitleBar.back(
-              title: StrRes.message,
-              backgroundColor: PageStyle.c_F8F8F8,
-              showShadow: false,
-              actions: [
-                PopButton(
-                  popCtrl: messageController.popCtrl,
-                  menuBgColor: Color(0xFFFFFFFF),
-                  showArrow: false,
-                  menuBgShadowColor: Color(0xFF000000).withOpacity(0.16),
-                  menuBgShadowBlurRadius: 6,
-                  menuBgShadowSpreadRadius: 2,
-                  menuItemTextStyle: PageStyle.ts_333333_14sp,
-                  menuItemHeight: 44.h,
-                  // menuItemWidth: 170.w,
-                  menuItemPadding: EdgeInsets.only(left: 20.w, right: 30.w),
-                  menuBgRadius: 6,
-                  // menuItemIconSize: 24.h,
-                  menus: [
-                    PopMenuInfo(
-                      text: StrRes.scan,
-                      icon: ImageRes.ic_popScan,
-                      onTap: () => messageController.toScanQrcode(),
-                    ),
-                    PopMenuInfo(
-                      text: StrRes.addFriend,
-                      icon: ImageRes.ic_popAddFriends,
-                      onTap: () => messageController.toAddFriend(),
-                    ),
-                    PopMenuInfo(
-                      text: StrRes.addGroup,
-                      icon: ImageRes.ic_popAddGroup,
-                      onTap: () => messageController.toAddGroup(),
-                    ),
-                    PopMenuInfo(
-                      text: StrRes.launchGroup,
-                      icon: ImageRes.ic_popLaunchGroup,
-                      onTap: () => messageController.createGroup(),
-                    ),
-                  ],
-                  child: TitleImageButton(
-                    imageStr: ImageRes.ic_addBlack,
-                    imageHeight: 24.h,
-                    imageWidth: 23.w,
-                    // onTap: (){},
-                    // onTap: onClickAddBtn,
-                    // height: 50.h,
+    return TouchCloseSoftKeyboard(
+      child: Scaffold(
+          appBar: EnterpriseTitleBar.back(
+            title: StrRes.message,
+            backgroundColor: PageStyle.c_F8F8F8,
+            showShadow: false,
+            actions: [
+              PopButton(
+                popCtrl: messageController.popCtrl,
+                menuBgColor: Color(0xB3000000),
+                showArrow: false,
+                menuBgShadowColor: Color(0xFF000000).withOpacity(0.16),
+                menuBgShadowBlurRadius: 6,
+                menuBgShadowSpreadRadius: 2,
+                menuItemTextStyle: TextStyle(fontSize: 16,color: Colors.white),
+                menuItemHeight: 44.h,
+                // menuItemWidth: 170.w,
+                menuItemPadding: EdgeInsets.only(left: 20.w, right: 30.w),
+                menuBgRadius: 6,
+                // menuItemIconSize: 24.h,
+                menus: [
+                  PopMenuInfo(
+                    text: StrRes.addFriend,
+                    icon: ImageRes.ic_popAddFriends,
+                    onTap: () => messageController.toAddFriend(),
                   ),
+                  PopMenuInfo(
+                    text: StrRes.addGroup,
+                    icon: ImageRes.ic_popAddGroup,
+                    onTap: () => messageController.toAddGroup(),
+                  ),
+                  PopMenuInfo(
+                    text: StrRes.scan,
+                    icon: ImageRes.ic_popScan,
+                    onTap: () => messageController.toScanQrcode(),
+                  ),
+                ],
+                child: TitleImageButton(
+                  imageStr: ImageRes.ic_addBlack,
+                  imageHeight: 24.h,
+                  imageWidth: 23.w,
+                  // onTap: (){},
+                  // onTap: onClickAddBtn,
+                  // height: 50.h,
                 ),
-              ],
-            ),
-            // two layer, one is background, one is content
-            body: Stack(children: [
-              // Container(
-              //   color: Color(0xffFFB300),
-              //   child: Column(children: [
-              //     Image.asset(
-              //       "assets/images/ic_account_setup.webp",
-              //       width: 100,
-              //       height: 100,
-              //     ),
-              //     Text("暂无消息"),
-              //   ]),
-              // ),
-              Container(
-                  alignment: Alignment.topLeft,
-                  margin: EdgeInsets.only(top: 16, left: 16, right: 16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    // borderRadius: BorderRadius.only(
-                    //     topLeft: Radius.circular(20),
-                    //     topRight: Radius.circular(20))
-                  ),
-                  child: ListView(children: [
-                    buildMessageItem(context),
-                  ]))
-            ])),
-      ),
+              ),
+            ],
+          ),
+          // two layer, one is background, one is content
+          body: Stack(children: [
+            // Container(
+            //   color: Color(0xffFFB300),
+            //   child: Column(children: [
+            //     Image.asset(
+            //       "assets/images/ic_account_setup.webp",
+            //       width: 100,
+            //       height: 100,
+            //     ),
+            //     Text("暂无消息"),
+            //   ]),
+            // ),
+            Container(
+                alignment: Alignment.topLeft,
+                margin: EdgeInsets.only(top: 16, left: 16, right: 16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  // borderRadius: BorderRadius.only(
+                  //     topLeft: Radius.circular(20),
+                  //     topRight: Radius.circular(20))
+                ),
+                child: ListView(children: [
+                  buildMessageItem(context),
+                ]))
+          ])),
     );
   }
 

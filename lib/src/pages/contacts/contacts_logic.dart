@@ -120,8 +120,8 @@ class ContactsLogic extends GetxController {
     AppNavigator.startInteractive();
   }
 
-  void toShop() {
-    AppNavigator.startShop();
+  void toShopMessage() {
+    AppNavigator.startShopMessage();
   }
 
   void toMyGroupList() {

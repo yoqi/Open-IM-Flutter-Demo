@@ -163,7 +163,7 @@ class AppPages {
         page: () => InteractivePage(),
         binding: InteractiveBinding()),
     GetPage(
-        name: AppRoutes.SHOP,
+        name: AppRoutes.SHOPMESSAGE,
         page: () => ShopMessagePage(),
         binding: ShopMessageBinding()),
     GetPage(

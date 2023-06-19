@@ -192,8 +192,8 @@ class AppNavigator {
   static void startInteractive(){
     Get.toNamed(AppRoutes.INTERACTIVE);
   }
-  static void startShop(){
-    Get.toNamed(AppRoutes.SHOP);
+  static void startShopMessage() {
+    Get.toNamed(AppRoutes.SHOPMESSAGE);
   }
 
   static void startGroupList() {
