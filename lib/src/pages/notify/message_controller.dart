@@ -21,25 +21,6 @@ class MessageController extends GetxController {
 
   @override
   void onInit() {
-    imLogic.conversationAddedSubject.listen((newList) {
-      // getConversationListSplit();
-      // getAllConversationList();
-      // list.addAll(newList);
-      list.insertAll(0, newList);
-      _sortConversationList();
-      // _parseDoNotDisturb(newList);
-    });
-    imLogic.conversationChangedSubject.listen((newList) {
-      for (var newValue in newList) {
-        list.remove(newValue);
-      }
-      list.insertAll(0, newList);
-      _sortConversationList();
-      // getConversationListSplit();
-      // getAllConversationList();
-      // list.assignAll(newList);
-      // _parseDoNotDisturb(newList);
-    });
     super.onInit();
   }
 

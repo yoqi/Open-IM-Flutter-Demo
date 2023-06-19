@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_openim_widget/flutter_openim_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:openim_demo/src/core/controller/im_controller.dart';
 import 'package:openim_demo/src/pages/notify/message_controller.dart';
 import 'package:openim_demo/src/res/images.dart';
 import 'package:openim_demo/src/res/strings.dart';
@@ -16,8 +15,7 @@ import 'package:openim_demo/src/widgets/touch_close_keyboard.dart';
 class MessagePage extends StatelessWidget {
   MessagePage({Key? key}) : super(key: key);
 
-  final logic = Get.find<MessageController>();
-  final imLogic = Get.find<IMController>();
+  final messageController = Get.find<MessageController>();
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +28,7 @@ class MessagePage extends StatelessWidget {
               showShadow: false,
               actions: [
                 PopButton(
-                  popCtrl: logic.popCtrl,
+                  popCtrl: messageController.popCtrl,
                   menuBgColor: Color(0xFFFFFFFF),
                   showArrow: false,
                   menuBgShadowColor: Color(0xFF000000).withOpacity(0.16),
@@ -46,22 +44,22 @@ class MessagePage extends StatelessWidget {
                     PopMenuInfo(
                       text: StrRes.scan,
                       icon: ImageRes.ic_popScan,
-                      onTap: () => logic.toScanQrcode(),
+                      onTap: () => messageController.toScanQrcode(),
                     ),
                     PopMenuInfo(
                       text: StrRes.addFriend,
                       icon: ImageRes.ic_popAddFriends,
-                      onTap: () => logic.toAddFriend(),
+                      onTap: () => messageController.toAddFriend(),
                     ),
                     PopMenuInfo(
                       text: StrRes.addGroup,
                       icon: ImageRes.ic_popAddGroup,
-                      onTap: () => logic.toAddGroup(),
+                      onTap: () => messageController.toAddGroup(),
                     ),
                     PopMenuInfo(
                       text: StrRes.launchGroup,
                       icon: ImageRes.ic_popLaunchGroup,
-                      onTap: () => logic.createGroup(),
+                      onTap: () => messageController.createGroup(),
                     ),
                   ],
                   child: TitleImageButton(
