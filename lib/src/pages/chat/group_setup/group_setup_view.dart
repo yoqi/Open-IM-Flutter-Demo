@@ -136,8 +136,8 @@ class GroupSetupPage extends StatelessWidget {
                         SizedBox(height: 63.h),
                         _buildButton(),
                         SizedBox(height: 8.h),
-                        _buildDissolveGroupButton(),
-                        // SizedBox(height: 20.h),
+                        if (logic.isMyGroup()) _buildDissolveGroupButton(),
+                        SizedBox(height: 20.h),
                       ],
                     ),
                   ),
@@ -255,7 +255,7 @@ class GroupSetupPage extends StatelessWidget {
                               children: [
                                 Center(
                                   child: AvatarView(
-                                    size: 59.h,
+                                    size: 40.h,
                                     url: info.faceURL,
                                   ),
                                 ),
@@ -270,15 +270,15 @@ class GroupSetupPage extends StatelessWidget {
                           delButton: () => Center(
                             child: Image.asset(
                               "assets/images/crowd-del-member-button.png",
-                              width: 59.h,
-                              height: 59.h,
+                              width: 40.h,
+                              height: 40.h,
                             ),
                           ),
                           addButton: () => Center(
                             child: Image.asset(
                               "assets/images/crowd-add-member-button.png",
-                              width: 59.h,
-                              height: 59.h,
+                              width: 40.h,
+                              height: 40.h,
                             ),
                           ),
                         );

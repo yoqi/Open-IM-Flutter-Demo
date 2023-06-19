@@ -1,14 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_openim_widget/flutter_openim_widget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:openim_demo/src/models/group_member_info.dart' as me;
-import 'package:openim_demo/src/res/images.dart';
 import 'package:openim_demo/src/res/strings.dart';
 import 'package:openim_demo/src/res/styles.dart';
 import 'package:openim_demo/src/widgets/avatar_view.dart';
 import 'package:openim_demo/src/widgets/azlist_view.dart';
-import 'package:openim_demo/src/widgets/search_box.dart';
 import 'package:openim_demo/src/widgets/titlebar.dart';
 
 import 'group_member_manager_logic.dart';
@@ -21,55 +18,70 @@ class GroupMemberManagerPage extends StatelessWidget {
     return Obx(
       () => Scaffold(
         appBar: EnterpriseTitleBar.back(
+          showShadow: false,
+          backgroundColor: PageStyle.c_F8F8F8,
           title: '${StrRes.groupMember}（${logic.allList.length}）',
           actions: [
-            PopButton(
-              popCtrl: logic.popCtrl,
-              menuBgColor: Color(0xFFFFFFFF),
-              showArrow: false,
-              menuBgShadowColor: Color(0xFF000000).withOpacity(0.16),
-              menuBgShadowBlurRadius: 6,
-              menuBgShadowSpreadRadius: 2,
-              menuItemTextStyle: PageStyle.ts_333333_14sp,
-              menuItemHeight: 44.h,
-              // menuItemWidth: 170.w,
-              menuItemPadding: EdgeInsets.only(left: 20.w, right: 20.w),
-              menuBgRadius: 6,
-              menus: [
-                PopMenuInfo(
-                  text: StrRes.inviteMember,
-                  onTap: () => logic.addMember(),
+            InkWell(
+              onTap: () => logic.addMember(),
+              child: Container(
+                margin: EdgeInsets.only(right: 16),
+                child: Text(
+                  "添加",
+                  style: TextStyle(color: Color(0xFFFFB300), fontSize: 18),
                 ),
-                if (logic.isMyGroup())
-                  PopMenuInfo(
-                    text: StrRes.removeMember,
-                    onTap: () => logic.deleteMember(),
-                  ),
-              ],
-              child: TitleImageButton(
-                imageStr: ImageRes.ic_more,
-                imageWidth: 20.w,
-                imageHeight: 24.h,
-                // height: 44.h,
               ),
-            ),
+            )
+            // PopButton(
+            //   popCtrl: logic.popCtrl,
+            //   menuBgColor: Color(0xFFFFFFFF),
+            //   showArrow: false,
+            //   menuBgShadowColor: Color(0xFF000000).withOpacity(0.16),
+            //   menuBgShadowBlurRadius: 6,
+            //   menuBgShadowSpreadRadius: 2,
+            //   menuItemTextStyle: PageStyle.ts_333333_14sp,
+            //   menuItemHeight: 44.h,
+            //   // menuItemWidth: 170.w,
+            //   menuItemPadding: EdgeInsets.only(left: 20.w, right: 20.w),
+            //   menuBgRadius: 6,
+            //   menus: [
+            //     PopMenuInfo(
+            //       text: StrRes.inviteMember,
+            //       onTap: () => logic.addMember(),
+            //     ),
+            //     if (logic.isMyGroup())
+            //       PopMenuInfo(
+            //         text: StrRes.removeMember,
+            //         onTap: () => logic.deleteMember(),
+            //       ),
+            //   ],
+            //   child: TitleImageButton(
+            //     imageStr: ImageRes.ic_more,
+            //     imageWidth: 20.w,
+            //     imageHeight: 24.h,
+            //     // height: 44.h,
+            //   ),
+            // ),
           ],
         ),
-        backgroundColor: PageStyle.c_FFFFFF,
+        backgroundColor: PageStyle.c_F8F8F8,
         body: SafeArea(
           child: Column(
             children: [
-              Container(
-                color: PageStyle.c_FFFFFF,
-                child: GestureDetector(
-                  onTap: () => logic.search(),
-                  child: SearchBox(
-                    enabled: false,
-                    margin: EdgeInsets.fromLTRB(22.w, 10.h, 22.w, 12.h),
-                    padding: EdgeInsets.symmetric(horizontal: 13.w),
-                  ),
-                ),
+              SizedBox(
+                height: 20,
               ),
+              // Container(
+              //   color: PageStyle.c_FFFFFF,
+              //   child: GestureDetector(
+              //     onTap: () => logic.search(),
+              //     child: SearchBox(
+              //       enabled: false,
+              //       margin: EdgeInsets.fromLTRB(22.w, 10.h, 22.w, 12.h),
+              //       padding: EdgeInsets.symmetric(horizontal: 13.w),
+              //     ),
+              //   ),
+              // ),
               Expanded(
                 child: WrapAzListView<me.GroupMembersInfo>(
                   data: logic.allList.value,

@@ -21,18 +21,50 @@ class CreateGroupInChatSetupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return TouchCloseSoftKeyboard(
       child: Scaffold(
-        backgroundColor: PageStyle.c_F6F6F6,
+        backgroundColor: PageStyle.c_F8F8F8,
         appBar: EnterpriseTitleBar.back(
           title: StrRes.launchGroup,
+          backgroundColor: PageStyle.c_F8F8F8,
+          showShadow: false,
         ),
         body: SafeArea(
-          child: Column(
-            children: [
-              _buildGroupInfoView(),
-              _buildGroupMemberView(),
-              Spacer(),
-              _buildButton(),
-            ],
+          child: Container(
+            padding: EdgeInsets.symmetric(horizontal: 24.w),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  height: 16,
+                ),
+                Text(
+                  "群名称*",
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF353535),
+                      fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                _buildGroupInfoView(),
+                Text(
+                  "添加群成员*",
+                  style: TextStyle(
+                      fontSize: 16,
+                      color: Color(0xFF353535),
+                      fontWeight: FontWeight.w500),
+                ),
+                SizedBox(
+                  height: 12,
+                ),
+                _buildGroupMemberView(),
+                Spacer(),
+                _buildButton(),
+                SizedBox(
+                  height: 50,
+                )
+              ],
+            ),
           ),
         ),
       ),
@@ -46,20 +78,20 @@ class CreateGroupInChatSetupPage extends StatelessWidget {
         color: PageStyle.c_FFFFFF,
         child: Row(
           children: [
-            Obx(() => logic.avatarUrl.value.isNotEmpty
-                ? AvatarView(
-                    url: logic.avatarUrl.value,
-                    size: 44.h,
-                  )
-                : ImageButton(
-                    onTap: () => logic.setAvatar(),
-                    imgStrRes: ImageRes.ic_uploadPhoto,
-                    imgWidth: 44.h,
-                    imgHeight: 44.h,
-                  )),
-            SizedBox(
-              width: 20.w,
-            ),
+            // Obx(() => logic.avatarUrl.value.isNotEmpty
+            //     ? AvatarView(
+            //         url: logic.avatarUrl.value,
+            //         size: 44.h,
+            //       )
+            //     : ImageButton(
+            //         onTap: () => logic.setAvatar(),
+            //         imgStrRes: ImageRes.ic_uploadPhoto,
+            //         imgWidth: 44.h,
+            //         imgHeight: 44.h,
+            //       )),
+            // SizedBox(
+            //   width: 20.w,
+            // ),
             Expanded(
               child: TextField(
                 controller: logic.nameCtrl,
@@ -76,52 +108,37 @@ class CreateGroupInChatSetupPage extends StatelessWidget {
       );
 
   Widget _buildGroupMemberView() => Obx(() => Container(
-        height: 135.h,
-        decoration: BoxDecoration(
-          color: PageStyle.c_FFFFFF,
-          boxShadow: [
-            BoxShadow(
-              color: PageStyle.c_000000_opacity10p,
-              blurRadius: 4,
-              offset: Offset(0, 2.h),
-            ),
-          ],
-        ),
-        padding: EdgeInsets.only(
-          left: 22.w,
-          right: 22.w,
-          top: 14.h,
-        ),
+        height: 100.h,
         child: Column(
           children: [
-            Row(
-              children: [
-                Text(
-                  StrRes.groupMember,
-                  style: PageStyle.ts_999999_14sp,
-                ),
-                Spacer(),
-                Text(
-                  sprintf(StrRes.xPerson, [logic.memberList.length]),
-                  style: PageStyle.ts_999999_14sp,
-                ),
-                SizedBox(
-                  width: 4.w,
-                ),
-                Image.asset(
-                  ImageRes.ic_next,
-                  width: 8.w,
-                  height: 14.h,
-                ),
-              ],
-            ),
+            // Row(
+            //   children: [
+            //     Text(
+            //       StrRes.groupMember,
+            //       style: PageStyle.ts_999999_14sp,
+            //     ),
+            //     Spacer(),
+            //     Text(
+            //       sprintf(StrRes.xPerson, [logic.memberList.length]),
+            //       style: PageStyle.ts_999999_14sp,
+            //     ),
+            //     SizedBox(
+            //       width: 4.w,
+            //     ),
+            //     Image.asset(
+            //       ImageRes.ic_next,
+            //       width: 8.w,
+            //       height: 14.h,
+            //     ),
+            //   ],
+            // ),
             Expanded(
               child: GridView.builder(
                 itemCount: logic.length(),
                 // padding: EdgeInsets.zero,
                 padding: EdgeInsets.only(top: 16.h),
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  crossAxisCount: 6,
+                  crossAxisCount: 5,
                 ),
                 itemBuilder: (_, index) {
                   return logic.itemBuilder(
@@ -189,14 +206,17 @@ class CreateGroupInChatSetupPage extends StatelessWidget {
         onTap: () async => await logic.completeCreation(),
         builder: (context, onTap) {
           return Ink(
-            color: PageStyle.c_1B72EC,
-            height: 45.h,
             child: InkWell(
               onTap: onTap,
               child: Container(
+                height: 45.h,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(22.5.h),
+                  color: Color(0xFFFFB300),
+                ),
                 alignment: Alignment.center,
                 child: Text(
-                  StrRes.completeCreation,
+                  "创建群聊",
                   style: PageStyle.ts_FFFFFF_18sp,
                 ),
               ),

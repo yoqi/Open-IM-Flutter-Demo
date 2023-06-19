@@ -20,104 +20,73 @@ class GroupNameSetupPage extends StatelessWidget {
       child: Scaffold(
         appBar: EnterpriseTitleBar.back(
           showShadow: false,
+          title: "群名称",
+          backgroundColor: PageStyle.c_F8F8F8,
+          actions: [
+            TextButton(
+              onPressed: () => logic.modifyGroupName(),
+              child: Text(
+                StrRes.finished,
+                style: TextStyle(
+                    color: Color(0xFFFFB300),
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500),
+              ),
+            )
+          ],
         ),
-        backgroundColor: PageStyle.c_FFFFFF,
+        backgroundColor: PageStyle.c_F8F8F8,
         body: SingleChildScrollView(
           child: Container(
             padding: EdgeInsets.only(
-              left: 42.w,
-              right: 42.w,
+              left: 24.w,
+              right: 24.w,
             ),
             child: Column(
+              // mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  height: 67.h,
+                  height: 16,
                 ),
-                Text(
-                  StrRes.modifyGroupName,
-                  style: PageStyle.ts_333333_20sp,
-                ),
+                Text("设置群名称",
+                    style: TextStyle(
+                        color: Color(0xFF353535),
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500)),
                 SizedBox(
-                  height: 10.h,
-                ),
-                Text(
-                  StrRes.modifyGroupNameHint,
-                  style: PageStyle.ts_333333_15sp,
-                ),
-                SizedBox(
-                  height: 46.h,
+                  height: 12.h,
                 ),
                 Container(
-                  decoration: DottedDecoration(),
-                ),
-                Container(
+                  padding: EdgeInsets.only(left: 16, top: 16),
                   decoration: BoxDecoration(
-                    border: BorderDirectional(
-                      bottom: BorderSide(
-                        color: PageStyle.c_333333_opacity40p,
-                        width: 0.5.h,
-                      ),
+                    borderRadius: BorderRadius.circular(8),
+                    color: Colors.white,
+                  ),
+                  child: TextField(
+                    autofocus: true,
+                    minLines: 4,
+                    maxLines: 5,
+                    controller: logic.nameCtrl,
+                    style: PageStyle.ts_333333_16sp,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
                     ),
                   ),
-                  child: Row(
-                    children: [
-                      AvatarView(
-                        size: 44.h,
-                        url: logic.info.value.faceURL,
-                      ),
-                      SizedBox(
-                        width: 11.w,
-                      ),
-                      Expanded(
-                        child: TextField(
-                          autofocus: true,
-                          controller: logic.nameCtrl,
-                          style: PageStyle.ts_333333_16sp,
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                          ),
-                        ),
-                      ),
-                      GestureDetector(
-                        onTap: () => logic.clear(),
-                        behavior: HitTestBehavior.translucent,
-                        child: Container(
-                          height: 44.h,
-                          child: Center(
-                            child: Image.asset(
-                              ImageRes.ic_clearInput,
-                              color: PageStyle.c_999999,
-                              width: 18.h,
-                              height: 18.h,
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
                 ),
                 SizedBox(
-                  height: 259.h,
+                  height: 12,
                 ),
-                Obx(() => Ink(
-                      width: 149.w,
-                      height: 34.h,
-                      decoration: BoxDecoration(
-                        color: PageStyle.c_1B72EC.withOpacity(
-                          logic.enabled.value ? 1 : 0.5,
-                        ),
-                        borderRadius: BorderRadius.circular(4),
-                      ),
-                      child: InkWell(
-                        onTap: () => logic.modifyGroupName(),
-                        child: Center(
-                          child: Text(
-                            StrRes.finished,
-                            style: PageStyle.ts_FFFFFF_16sp,
-                          ),
-                        ),
-                      ),
-                    ))
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "4/15",
+                      style:
+                          TextStyle(color: Color(0xFF888888), fontSize: 12.sp),
+                    )
+                  ],
+                )
               ],
             ),
           ),
