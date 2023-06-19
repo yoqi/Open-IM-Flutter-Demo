@@ -29,15 +29,17 @@ class MessagePage extends StatelessWidget {
               PopButton(
                 popCtrl: messageController.popCtrl,
                 menuBgColor: Color(0xB3000000),
-                showArrow: false,
+                showArrow: true,
                 menuBgShadowColor: Color(0xFF000000).withOpacity(0.16),
                 menuBgShadowBlurRadius: 6,
                 menuBgShadowSpreadRadius: 2,
-                menuItemTextStyle: TextStyle(fontSize: 16,color: Colors.white),
+                menuItemTextStyle: TextStyle(fontSize: 16, color: Colors.white),
                 menuItemHeight: 44.h,
                 // menuItemWidth: 170.w,
                 menuItemPadding: EdgeInsets.only(left: 20.w, right: 30.w),
                 menuBgRadius: 6,
+                dividingLineColor: Color(0xFF707070),
+                dividingLineWidth: 1,
                 // menuItemIconSize: 24.h,
                 menus: [
                   PopMenuInfo(
