@@ -195,6 +195,9 @@ class AppNavigator {
   static void startShopMessage() {
     Get.toNamed(AppRoutes.SHOPMESSAGE);
   }
+  static void startConsultingMessage(){
+    Get.toNamed(AppRoutes.CONSULTINGMESSAGE);
+  }
 
   static void startSystemMessage(){
     Get.toNamed(AppRoutes.SYSTEMMESSAGE);

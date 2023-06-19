@@ -324,6 +324,9 @@ class MessagePage extends StatelessWidget {
           ),
         ),
         ListTile(
+          onTap: (){
+            messageController.toConsultMessage();
+          },
           leading: Container(
             width: 48,
             height: 48,

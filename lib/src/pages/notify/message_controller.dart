@@ -41,6 +41,10 @@ class MessageController extends GetxController {
   void toShopMessage(){
     AppNavigator.startShopMessage();
   }
+
+  void toConsultMessage(){
+    AppNavigator.startConsultingMessage();
+  }
  
   void toSystemMessage(){
     AppNavigator.startSystemMessage();
