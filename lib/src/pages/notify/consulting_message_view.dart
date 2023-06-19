@@ -40,6 +40,7 @@ class ConsultingMessagePage extends StatelessWidget {
         child: ListView.builder(
           itemBuilder: (context, index) {
             return ListTile(
+              tileColor: Colors.white,
               leading: Container(
                 height: 48,
                 width: 48,
@@ -49,30 +50,57 @@ class ConsultingMessagePage extends StatelessWidget {
               ),
               title: Container(
                 width: 50,
-                child:
-                    Row(mainAxisAlignment: MainAxisAlignment.start, children: [
-                  Expanded(
-                    child: Text(messages[index].name),
-                    flex: 1,
-                  ),
-                  Container(
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFF006FFF), Color(0xFF00C2FF)],
+                child: Row(
+                    // crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Text(messages[index].name),
+                      SizedBox(
+                        width: 5,
                       ),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                    padding:
-                        EdgeInsets.only(left: 6, right: 6, top: 2, bottom: 2),
-                    child: Text(
-                      "商家",
-                      style: TextStyle(fontSize: 10, color: Colors.white),
-                    ),
-                  ),
-                ]),
+                      Container(
+                        decoration: BoxDecoration(
+                          gradient: LinearGradient(
+                            colors: [Color(0xFF006FFF), Color(0xFF00C2FF)],
+                          ),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                        padding: EdgeInsets.only(
+                            left: 6, right: 6, top: 2, bottom: 2),
+                        child: Text(
+                          "商家",
+                          style: TextStyle(fontSize: 10, color: Colors.white),
+                        ),
+                      ),
+                    ]),
               ),
               subtitle: Text(messages[index].message),
-              trailing: Text(messages[index].time),
+              trailing: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Text(
+                      messages[index].time,
+                      style: TextStyle(color: Color(0xFFDBDBDB), fontSize: 12),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    messages[index].unreadCount > 0
+                        ? Container(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 8, vertical: 4),
+                            decoration: BoxDecoration(
+                              color: Color(0xFFFF0000),
+                              borderRadius: BorderRadius.circular(8),
+                            ),
+                            child: Text(
+                              messages[index].unreadCount.toString(),
+                              style:
+                                  TextStyle(fontSize: 12, color: Colors.white),
+                            ),
+                          )
+                        : Container(),
+                  ]),
             );
           },
           itemCount: messages.length,
