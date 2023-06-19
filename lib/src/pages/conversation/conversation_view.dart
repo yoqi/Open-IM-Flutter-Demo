@@ -141,7 +141,7 @@ class ConversationPage extends StatelessWidget {
         ),
         PopButton(
           popCtrl: logic.popCtrl,
-          menuBgColor: Color(0xFFFFFFFF),
+          menuBgColor: Color(0xB3000000),
           showArrow: false,
           menuBgShadowColor: Color(0xFF000000).withOpacity(0.16),
           menuBgShadowBlurRadius: 6,
@@ -154,11 +154,6 @@ class ConversationPage extends StatelessWidget {
           // menuItemIconSize: 24.h,
           menus: [
             PopMenuInfo(
-              text: StrRes.scan,
-              icon: ImageRes.ic_popScan,
-              onTap: () => logic.toScanQrcode(),
-            ),
-            PopMenuInfo(
               text: StrRes.addFriend,
               icon: ImageRes.ic_popAddFriends,
               onTap: () => logic.toAddFriend(),
@@ -169,9 +164,9 @@ class ConversationPage extends StatelessWidget {
               onTap: () => logic.toAddGroup(),
             ),
             PopMenuInfo(
-              text: StrRes.launchGroup,
-              icon: ImageRes.ic_popLaunchGroup,
-              onTap: () => logic.createGroup(),
+              text: StrRes.scan,
+              icon: ImageRes.ic_popScan,
+              onTap: () => logic.toScanQrcode(),
             ),
           ],
           child: TitleImageButton(

@@ -116,6 +116,9 @@ class ContactsLogic extends GetxController {
     AppNavigator.startMessage();
   }
 
+  void toInteracive(){
+    AppNavigator.startInteractive();
+  }
   void toMyGroupList() {
     AppNavigator.startGroupList();
     // Get.toNamed(AppRoutes.GROUP_LIST);

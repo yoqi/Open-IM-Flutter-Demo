@@ -56,10 +56,15 @@ class ContactsPage extends StatelessWidget {
                 label: StrRes.myFriend,
                 onTap: () => logic.toMyFriendList(),
               ),
-                           _buildGroupItem(
+              _buildGroupItem(
                 icon: ImageRes.ic_myFriend,
                 label: "消息",
                 onTap: () => logic.toMessage(),
+              ),
+              _buildGroupItem(
+                icon: ImageRes.ic_myFriend,
+                label: "互动通知",
+                onTap: () => logic.toInteracive(),
               ),
               // _buildGroupItem(
               //   icon: ImageRes.ic_myGroup,

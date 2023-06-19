@@ -189,6 +189,9 @@ class AppNavigator {
   static void startMessage(){
     Get.toNamed(AppRoutes.MESSAGE);
   }
+  static void startInteractive(){
+    Get.toNamed(AppRoutes.INTERACTIVE);
+  }
 
   static void startGroupList() {
     Get.toNamed(AppRoutes.GROUP_LIST);
