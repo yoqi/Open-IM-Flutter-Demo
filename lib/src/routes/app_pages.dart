@@ -87,6 +87,8 @@ import 'package:openim_demo/src/pages/notify/interactive_binding.dart';
 import 'package:openim_demo/src/pages/notify/interactive_view.dart';
 import 'package:openim_demo/src/pages/notify/message_binding.dart';
 import 'package:openim_demo/src/pages/notify/message_view.dart';
+import 'package:openim_demo/src/pages/notify/shop_message_binding.dart';
+import 'package:openim_demo/src/pages/notify/shop_message_view.dart';
 import 'package:openim_demo/src/pages/organization/organization_binding.dart';
 import 'package:openim_demo/src/pages/organization/organization_view.dart';
 import 'package:openim_demo/src/pages/register/register_binding.dart';
@@ -103,7 +105,6 @@ import 'package:openim_demo/src/pages/select_contacts/select_contacts_binding.da
 import 'package:openim_demo/src/pages/select_contacts/select_contacts_view.dart';
 import 'package:openim_demo/src/pages/splash/splash_binding.dart';
 import 'package:openim_demo/src/pages/splash/splash_view.dart';
-
 part 'app_routes.dart';
 
 class AppPages {
@@ -161,6 +162,10 @@ class AppPages {
         name: AppRoutes.INTERACTIVE,
         page: () => InteractivePage(),
         binding: InteractiveBinding()),
+    GetPage(
+        name: AppRoutes.SHOP,
+        page: () => ShopMessagePage(),
+        binding: ShopMessageBinding()),
     GetPage(
       name: AppRoutes.CHAT_SETUP,
       page: () => ChatSetupPage(),

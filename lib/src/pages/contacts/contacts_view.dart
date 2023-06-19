@@ -66,6 +66,11 @@ class ContactsPage extends StatelessWidget {
                 label: "互动通知",
                 onTap: () => logic.toInteracive(),
               ),
+                 _buildGroupItem(
+                icon: ImageRes.ic_myFriend,
+                label: "我的店铺",
+                onTap: () => logic.toShop(),
+              ),
               // _buildGroupItem(
               //   icon: ImageRes.ic_myGroup,
               //   label: StrRes.myGroup,
