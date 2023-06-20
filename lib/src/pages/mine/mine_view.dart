@@ -117,6 +117,11 @@ class MinePage extends StatelessWidget {
             label: StrRes.logout,
             onTap: () => logic.logout(),
           ),
+          _buildItemView(
+            icon: ImageRes.ic_logout,
+            label: "用户主页",
+            onTap: () => logic.goToUserInfo(),
+          ),
         ],
       ),
     );

@@ -351,6 +351,10 @@ class AppNavigator {
     Get.toNamed(AppRoutes.ABOUT_US);
   }
 
+  static void startUserInfo(){
+    Get.toNamed(AppRoutes.USER_INFO);
+  }
+
   static void startOrderMessage() {
     Get.toNamed(AppRoutes.ORDERMESSAGE);
   }

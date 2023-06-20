@@ -83,6 +83,8 @@ import 'package:openim_demo/src/pages/mine/setup_language/setup_language_binding
 import 'package:openim_demo/src/pages/mine/setup_language/setup_language_view.dart';
 import 'package:openim_demo/src/pages/mine/setup_username/setup_name_binding.dart';
 import 'package:openim_demo/src/pages/mine/setup_username/setup_name_view.dart';
+import 'package:openim_demo/src/pages/mine/user_info/user_info_binding.dart';
+import 'package:openim_demo/src/pages/mine/user_info/user_info_view.dart';
 import 'package:openim_demo/src/pages/notify/consulting_message_binding.dart';
 import 'package:openim_demo/src/pages/notify/consulting_message_view.dart';
 import 'package:openim_demo/src/pages/notify/interactive_binding.dart';
@@ -260,6 +262,11 @@ class AppPages {
       name: AppRoutes.MY_INFO,
       page: () => MyInfoPage(),
       binding: MyInfoBinding(),
+    ),
+       GetPage(
+      name: AppRoutes.USER_INFO,
+      page: () => UserInfoPage(),
+      binding: UserInfoBinding(),
     ),
     GetPage(
       name: AppRoutes.SETUP_USER_NAME,
