@@ -4,7 +4,7 @@ import 'package:get/get.dart';
 import 'package:openim_demo/src/res/images.dart';
 import 'package:openim_demo/src/res/strings.dart';
 import 'package:openim_demo/src/res/styles.dart';
-import 'package:openim_demo/src/widgets/search_box.dart';
+import 'package:openim_demo/src/widgets/search_box2.dart';
 import 'package:openim_demo/src/widgets/titlebar.dart';
 
 import 'add_friend_logic.dart';
@@ -32,7 +32,7 @@ class AddFriendPage extends StatelessWidget {
             SizedBox(
               height: 9,
             ),
-            SearchBox(
+            SearchBox2(
               controller: logic.searchCtrl,
               focusNode: logic.focusNode,
               enabled: true,
