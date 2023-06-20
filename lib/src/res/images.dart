@@ -86,10 +86,10 @@ class ImageRes {
   static const ic_appCall = "${_dir}ic_app_call.webp";
   static const ic_appCallGrey = "${_dir}ic_app_call_grey.webp";
   static const ic_sendAddFriendMsg = "${_dir}ic_send_add_msg.webp";
-  static const ic_popAddFriends = "${_dir}ic_pop_add_friends.webp";
-  static const ic_popAddGroup = "${_dir}ic_pop_add_group.webp";
+  static const ic_popAddFriends = "${_dir}add-friends-icon.png";
+  static const ic_popAddGroup = "${_dir}add-crowd-icon.png";
   static const ic_popLaunchGroup = "${_dir}ic_pop_launch_group.webp";
-  static const ic_popScan = "${_dir}ic_pop_scan.webp";
+  static const ic_popScan = "${_dir}message-more-qrcode-icon.png";
   static const ic_searchUResult = "${_dir}ic_search_u_result.webp";
   static const ic_tabSelFriend = "${_dir}ic_tab_friend_sel.webp";
   static const ic_tabUnselFriend = "${_dir}ic_tab_friend_unsel.webp";

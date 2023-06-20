@@ -12,50 +12,117 @@ import 'add_friend_logic.dart';
 class AddFriendPage extends StatelessWidget {
   final logic = Get.find<AddFriendLogic>();
 
+  Size get _size => MediaQuery.of(Get.context!).size;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: EnterpriseTitleBar.back(
-        title: StrRes.add,
+        title: "添加好友",
+        backgroundColor: PageStyle.c_F8F8F8,
+        showShadow: false,
       ),
       backgroundColor: PageStyle.c_F8F8F8,
-      body: Column(
-        children: [
-          Container(
-            color: PageStyle.c_FFFFFF,
-            child: GestureDetector(
-              onTap: () => logic.toSearchPage(),
-              behavior: HitTestBehavior.translucent,
-              child: SearchBox(
-                enabled: false,
-                margin: EdgeInsets.symmetric(vertical: 12.h, horizontal: 22.w),
-                padding: EdgeInsets.symmetric(horizontal: 13.w),
-                hintText: StrRes.searchDescribe,
-              ),
+      body: Container(
+        width: _size.width,
+        height: _size.height,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 9,
             ),
-          ),
-          _buildItemView(
-            icon: ImageRes.ic_mineQrCode,
-            title: StrRes.myQrcode,
-            desc: StrRes.inviteScan,
-            alignment: Alignment.bottomCenter,
-            onTap: () => logic.toMyQrcode(),
-          ),
-          Container(
-            height: 1,
-            color: Color(0xFFF1F1F1),
-            margin: EdgeInsets.only(left: 71.w, right: 22.w),
-          ),
-          _buildItemView(
-              icon: ImageRes.ic_scan,
-              title: StrRes.scan,
-              desc: StrRes.scanQrcodeCarte,
-              alignment: Alignment.topCenter,
-              onTap: () => logic.toScanQrcode()),
-        ],
+            SearchBox(
+              controller: logic.searchCtrl,
+              focusNode: logic.focusNode,
+              enabled: true,
+              autofocus: true,
+              margin: EdgeInsets.symmetric(vertical: 12.h, horizontal: 22.w),
+              // margin: EdgeInsets.fromLTRB(12.w, 0, 0, 0),
+              padding: EdgeInsets.symmetric(horizontal: 12.w),
+              hintText: logic.isSearchUser
+                  ? StrRes.searchUserDescribe
+                  : StrRes.searchGroupDescribe,
+              height: 41.h,
+              clearBtn: Container(
+                child: Image.asset(
+                  ImageRes.ic_clearInput,
+                  color: Color(0xFF999999),
+                  width: 20.w,
+                  height: 20.w,
+                ),
+              ),
+              onSubmitted: (v) => logic.search(),
+            ),
+            StreamBuilder(
+              stream: logic.resultSub.stream,
+              builder: (context, AsyncSnapshot<String> sh) {
+                if (logic.searchCtrl.text.isNotEmpty && sh.hasData) {
+                  if (sh.data!.isNotEmpty) {
+                    return _buildResultView(sh.data!);
+                  }
+                  return _buildNoResultView();
+                }
+                return Container();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
+
+  Widget _buildResultView(String id) => Ink(
+        height: 59.h,
+        color: PageStyle.c_FFFFFF,
+        child: InkWell(
+          onTap: logic.viewInfo,
+          child: Container(
+            margin: EdgeInsets.only(top: 16.h),
+            padding: EdgeInsets.only(left: 22.w),
+            child: Row(
+              children: [
+                RichText(
+                  text: TextSpan(
+                    text: "七亩地号：",
+                    style: TextStyle(color: Color(0xFFABA89D), fontSize: 12.sp),
+                    children: [
+                      TextSpan(
+                        text: id,
+                        style: TextStyle(
+                            color: Color(0xFFABA89D), fontSize: 12.sp),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      );
+
+  Widget _buildNoResultView() => Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(
+              height: 160,
+            ),
+            Image.asset(
+              "assets/images/nofound.jpg",
+              width: 141,
+              height: 111,
+            ),
+            SizedBox(
+              height: 38,
+            ),
+            Text(
+              "用户不存在",
+              style: TextStyle(color: Color(0xFF969799), fontSize: 14),
+            )
+          ],
+        ),
+      );
 
   Widget _buildItemView({
     required String icon,
