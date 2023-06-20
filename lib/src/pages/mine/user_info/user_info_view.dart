@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:openim_demo/src/core/controller/im_controller.dart';
 import 'package:openim_demo/src/pages/mine/mine_logic.dart';
 import 'package:openim_demo/src/res/images.dart';
-import 'package:openim_demo/src/res/strings.dart';
 import 'package:openim_demo/src/res/styles.dart';
 import 'package:openim_demo/src/widgets/avatar_view.dart';
 
@@ -15,6 +14,18 @@ class UserInfoPage extends StatelessWidget {
   final imLogic = Get.find<IMController>();
 
   Size get _size => MediaQuery.of(Get.context!).size;
+
+  final List<Tab> tabs = <Tab>[
+    Tab(
+      text: "作品",
+    ),
+    Tab(
+      text: "点赞",
+    ),
+    Tab(
+      text: "收藏",
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -125,76 +136,83 @@ class UserInfoPage extends StatelessWidget {
                         child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Row(
-                                // crossAxisAlignment: CrossAxisAlignment.center,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "22398",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
-                                      ),
-                                      Text("获赞",
+                              SizedBox(
+                                height: 100,
+                                width: _size.width,
+                                child: Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "22398",
                                           style: TextStyle(
-                                              fontSize: 12,
-                                              color: Color(0xFFABA89D)))
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "22398",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
-                                      ),
-                                      Text("粉丝",
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18),
+                                        ),
+                                        Text("获赞",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Color(0xFFABA89D)))
+                                      ],
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Flexible(
+                                          child: Text(
+                                            "22398",
+                                            style: TextStyle(
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 18),
+                                          ),
+                                        ),
+                                        Flexible(
+                                          child: Text("粉丝",
+                                              style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: Color(0xFFABA89D))),
+                                        )
+                                      ],
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "22398",
                                           style: TextStyle(
-                                              fontSize: 12,
-                                              color: Color(0xFFABA89D)))
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "22398",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
-                                      ),
-                                      Text("关注",
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18),
+                                        ),
+                                        Text("关注",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Color(0xFFABA89D)))
+                                      ],
+                                    ),
+                                    Column(
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Text(
+                                          "22398",
                                           style: TextStyle(
-                                              fontSize: 12,
-                                              color: Color(0xFFABA89D)))
-                                    ],
-                                  ),
-                                  Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.center,
-                                    children: [
-                                      Text(
-                                        "22398",
-                                        style: TextStyle(
-                                            fontWeight: FontWeight.bold,
-                                            fontSize: 18),
-                                      ),
-                                      Text("朋友",
-                                          style: TextStyle(
-                                              fontSize: 12,
-                                              color: Color(0xFFABA89D)))
-                                    ],
-                                  ),
-                                ],
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 18),
+                                        ),
+                                        Text("朋友",
+                                            style: TextStyle(
+                                                fontSize: 12,
+                                                color: Color(0xFFABA89D)))
+                                      ],
+                                    ),
+                                  ],
+                                ),
                               ),
                             ]),
                       ))
@@ -202,29 +220,8 @@ class UserInfoPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            height: 300.h,
-          ),
-          _buildItemView(
-            icon: ImageRes.ic_myInfo,
-            label: StrRes.myInfo,
-            onTap: () => logic.viewMyInfo(),
-          ),
-          _buildItemView(
-            icon: ImageRes.ic_accountSetup,
-            label: StrRes.accountSetup,
-            onTap: () => logic.accountSetup(),
-          ),
-          _buildItemView(
-            icon: ImageRes.ic_aboutUs,
-            label: StrRes.aboutUs,
-            onTap: () => logic.aboutUs(),
-          ),
-          _buildItemView(
-            icon: ImageRes.ic_logout,
-            label: StrRes.logout,
-            onTap: () => logic.logout(),
-          ),
+ 
+          // buildTab()
         ],
       ),
     );
@@ -255,4 +252,19 @@ class UserInfoPage extends StatelessWidget {
           ),
         ),
       );
+
+  Widget buildTab() {
+    // three tab:作品，点赞，收藏
+    return DefaultTabController(
+      length: tabs.length,
+      child: Column(children: [
+        TabBar(tabs: tabs),
+        TabBarView(children: [
+          Center(child: Text('This is tab 1')),
+          Center(child: Text('This is tab 2')),
+          Center(child: Text('This is tab 3')),
+        ])
+      ]),
+    );
+  }
 }

@@ -13,6 +13,10 @@ class AppNavigator {
     Get.until((route) => Get.currentRoute == AppRoutes.LOGIN);
   }
 
+  static void startJubao(){
+    Get.toNamed(AppRoutes.JUBAO);
+  }
+
   static void startLogin() {
     Get.offAllNamed(AppRoutes.LOGIN);
   }

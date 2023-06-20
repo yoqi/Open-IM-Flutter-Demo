@@ -14,6 +14,7 @@ abstract class AppRoutes {
   static const CHAT_SETUP = "/chat_setup";
 
   static const MESSAGE = "/message";
+  static const JUBAO="/jubao";
   static const USER_INFO = "/user_info";
   static const ORDERMESSAGE="/order_message";
   static const SHOPMESSAGE = "/shop_message";

@@ -20,7 +20,9 @@ class MineLogic extends GetxController {
   //   var info = await OpenIM.iMManager.getLoginUserInfo();
   //   userInfo?.value = info;
   // }
-
+  void goJubao(){
+    AppNavigator.startJubao();
+  }
   void viewMyQrcode() {
     AppNavigator.startMyQrcode();
     // Get.toNamed(AppRoutes.MY_QRCODE /*, arguments: imLogic.loginUserInfo*/);

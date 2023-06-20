@@ -63,6 +63,7 @@ import 'package:openim_demo/src/pages/forget_password/forget_password_binding.da
 import 'package:openim_demo/src/pages/forget_password/forget_password_view.dart';
 import 'package:openim_demo/src/pages/home/home_binding.dart';
 import 'package:openim_demo/src/pages/home/home_view.dart';
+import 'package:openim_demo/src/pages/jubao/jubao_view.dart';
 import 'package:openim_demo/src/pages/login/login_binding.dart';
 import 'package:openim_demo/src/pages/login/login_view.dart';
 import 'package:openim_demo/src/pages/mine/about_us/about_us_binding.dart';
@@ -259,11 +260,16 @@ class AppPages {
       binding: MyQrcodeBinding(),
     ),
     GetPage(
+      name: AppRoutes.JUBAO,
+      page: () => JubaoPage(),
+      binding: JoinGroupBinding(),
+    ),
+    GetPage(
       name: AppRoutes.MY_INFO,
       page: () => MyInfoPage(),
       binding: MyInfoBinding(),
     ),
-       GetPage(
+    GetPage(
       name: AppRoutes.USER_INFO,
       page: () => UserInfoPage(),
       binding: UserInfoBinding(),
