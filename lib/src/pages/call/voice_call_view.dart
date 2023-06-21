@@ -26,11 +26,20 @@ class VoiceCallPage extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Image.asset(
-                      "assets/images/ic_my_friend.webp",
-                      width: 100,
-                      height: 100,
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(60),
+                      child: Image.asset(
+                        "assets/images/iocn_logo_default2.jpg",
+                        width: 120,
+                        height: 120,
+                        fit: BoxFit.cover,
+                      ),
                     ),
+                    // Image.network(
+                    //   "assets/images/iocn_logo_default2.jpg",
+                    //   width: 100,
+                    //   height: 100,
+                    // ),
                     SizedBox(
                       height: 32,
                     ),
@@ -48,8 +57,55 @@ class VoiceCallPage extends StatelessWidget {
                   ],
                 ),
               )),
+          Positioned(bottom: 122, child: buildBottomView())
         ],
       )),
+    );
+  }
+
+  // 左右两边的按钮，左边挂断，右边接听，滑动到右边接听，滑动到左边挂断
+  buildBottomView() {
+    return Container(
+      width: _size.width,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        children: [
+          GestureDetector(
+            onTap: () {
+              logic.hangUp();
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(30))),
+              child: Image.asset(
+                "assets/images/voicetelephone-hangup-button.png",
+                width: 64,
+                height: 64,
+              ),
+            ),
+          ),
+          GestureDetector(
+            onTap: () {
+              logic.accept();
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.all(Radius.circular(30))),
+              child: Image.asset(
+                "assets/images/voicetelephone-answerthephone-button.png",
+                width: 64,
+                height: 64,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

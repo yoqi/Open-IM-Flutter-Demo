@@ -13,4 +13,8 @@ class VoiceCallController extends GetxController {
     toName.value = Get.parameters["toName"] ?? "";
     toAvatar.value = Get.parameters["toAvatar"] ?? "";
   }
+
+  void hangUp() {}
+
+  void accept() {}
 }
