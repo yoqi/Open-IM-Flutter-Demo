@@ -15,6 +15,7 @@ abstract class AppRoutes {
 
   static const MESSAGE = "/message";
   static const VOICE_CALL="/voice_call";
+  static const VOICE_CALL2="/voice_call2";
   static const VIDEO_CALL="/video_call";
   static const JUBAO="/jubao";
   static const USER_INFO = "/user_info";

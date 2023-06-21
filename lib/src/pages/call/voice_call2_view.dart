@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_connect/http/src/utils/utils.dart';
-import 'package:openim_demo/src/pages/call/voice_call_controller.dart';
+import 'package:openim_demo/src/pages/call/voice_call2_controller.dart';
 
-class VoiceCallPage extends StatelessWidget {
-  VoiceCallPage({Key? key}) : super(key: key);
-  final logic = Get.find<VoiceCallController>();
+/// 接电话
+class VoiceCall2Page extends StatelessWidget {
+  VoiceCall2Page({Key? key}) : super(key: key);
+  final logic = Get.find<VoiceCall2Controller>();
   Size get _size => MediaQuery.of(Get.context!).size;
 
   @override
@@ -72,7 +73,6 @@ class VoiceCallPage extends StatelessWidget {
     );
   }
 
-  // 左右两边的按钮，左边挂断，右边接听，滑动到右边接听，滑动到左边挂断
   buildBottomView() {
     return Column(
       children: [
@@ -91,65 +91,46 @@ class VoiceCallPage extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              AnimatedPositioned(
-                left: -logic.dragDistance,
-                duration: Duration(milliseconds: 200),
-                child: GestureDetector(
-                  onHorizontalDragStart: (details) {
-                    // 记录滑动开始时的位置
-                    logic.dragStartX = details.globalPosition.dx;
-                  },
-                  onHorizontalDragUpdate: (details) {
-                    // 根据水平滑动距离更新按钮位置
-                    logic.dragDistance =
-                        (logic.dragStartX - details.globalPosition.dx)
-                            .clamp(0, 100); // 最大滑动距离设置为 100 像素
-                  },
-                  onHorizontalDragEnd: (details) {
-                    // 如果滑动距离超过一定阈值，则执行挂断操作
-                    if (logic.dragDistance > 30) {
-                      logic.dragDistance = 100;
-                      logic.isAnswering = false;
-                    } else {
-                      logic.dragDistance = 0;
-                    }
-                  },
-                  child: Container(
-                    width: 60,
-                    height: 60,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(30))),
-                    child: Image.asset(
-                      "assets/images/voicetelephone-hangup-button.png",
-                      width: 64,
-                      height: 64,
-                    ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: logic.isCallOrAnser
+                      ? Image.asset(
+                          "assets/images/voicetelephone-mute-button.png",
+                          width: 64,
+                          height: 64,
+                        )
+                      : Image.asset(
+                          "assets/images/voicetelephone-off-mic-button.png",
+                          width: 64,
+                          height: 64,
+                        ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  width: 60,
+                  height: 60,
+                  decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(30))),
+                  child: Image.asset(
+                    "assets/images/voicetelephone-hangup-button.png",
+                    width: 64,
+                    height: 64,
                   ),
                 ),
               ),
-              AnimatedPositioned(
-                duration: Duration(milliseconds: 200),
-                right: -logic.dragDistance,
-                child: GestureDetector(
-                  onHorizontalDragStart: (details) {
-                    // 记录滑动开始时的位置
-                    logic.dragStartX = details.globalPosition.dx;
-                  },
-                  onHorizontalDragUpdate: (details) {
-                    // 根据水平滑动距离更新按钮位置
-                    logic.dragDistance =
-                        (logic.dragStartX - details.globalPosition.dx)
-                            .clamp(0, 100); // 最大滑动距离设置为 100 像素
-                  },
-                  onHorizontalDragEnd: (details) {
-                    // 如果滑动距离超过一定阈值，则执行挂断操作
-                    if (logic.dragDistance > 30) {
-                      logic.dragDistance = 100;
-                      logic.isAnswering = false;
-                    } else {
-                      logic.dragDistance = 0;
-                    }
+              GestureDetector(
+                  onTap: () {
+                    logic.isCallOrAnser = false;
+                    // logic.isShow = true;
                   },
                   child: Container(
                     width: 60,
@@ -157,14 +138,18 @@ class VoiceCallPage extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(30))),
-                    child: Image.asset(
-                      "assets/images/voicetelephone-answerthephone-button.png",
-                      width: 64,
-                      height: 64,
-                    ),
-                  ),
-                ),
-              )
+                    child: logic.isSpearchOn
+                        ? Image.asset(
+                            "assets/images/voicetelephone-on-speaker-button.png",
+                            width: 64,
+                            height: 64,
+                          )
+                        : Image.asset(
+                            "assets/images/voicetelephone-receiver-button.png",
+                            width: 64,
+                            height: 64,
+                          ),
+                  ))
             ],
           ),
         ),
@@ -172,18 +157,34 @@ class VoiceCallPage extends StatelessWidget {
           width: 319,
           height: 40,
           margin: EdgeInsets.only(right: 28, left: 28),
-          padding: EdgeInsets.only(left: 20, right: 20),
+          padding: EdgeInsets.only(left: 10, right: 10),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
+              if (logic.isMKFOn)
+                Text(
+                  "麦克风已开",
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                )
+              else
+                Text(
+                  "麦克风已关",
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                ),
               Text(
                 "挂断",
                 style: TextStyle(fontSize: 14, color: Colors.white),
               ),
-              Text(
-                "接听",
-                style: TextStyle(fontSize: 14, color: Colors.white),
-              )
+              if (logic.isSpearchOn)
+                Text(
+                  "扬声器",
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                )
+              else
+                Text(
+                  "听筒",
+                  style: TextStyle(fontSize: 14, color: Colors.white),
+                )
             ],
           ),
         )

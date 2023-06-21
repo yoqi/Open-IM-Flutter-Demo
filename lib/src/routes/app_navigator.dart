@@ -430,7 +430,7 @@ class AppNavigator {
 
   static void toVoiceCallPage(
       {required String uid, required String name, required String avatar}) {
-    Get.toNamed(AppRoutes.VOICE_CALL, arguments: {
+    Get.toNamed(AppRoutes.VOICE_CALL2, arguments: {
       "uid": uid,
       "name": name,
       "avatar": avatar,

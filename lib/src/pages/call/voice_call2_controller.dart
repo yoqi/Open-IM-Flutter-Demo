@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 
-class VoiceCallController extends GetxController {
+class VoiceCall2Controller extends GetxController {
   RxString toUid = "".obs;
   RxString toName = "".obs;
   RxString toAvatar = "".obs;
@@ -8,7 +8,8 @@ class VoiceCallController extends GetxController {
   var dragStartX = 0.0;
   var dragDistance = 0.0;
   var isAnswering = false;
-  // get param from route
+  var isMKFOn = false; //开启麦克风
+  var isSpearchOn = false;
 
   var isCallOrAnser = true; // 接电话还是打电话
 
