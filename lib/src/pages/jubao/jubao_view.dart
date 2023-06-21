@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:openim_demo/src/pages/jubao/jubao_controller.dart';
 import 'package:openim_demo/src/res/styles.dart';
 import 'package:openim_demo/src/widgets/titlebar.dart';
 
@@ -6,6 +8,8 @@ import 'package:openim_demo/src/widgets/titlebar.dart';
 /// Time       : 06/01/2023 Thursday
 /// Author     : liuyuqi.gov@msn.cn
 class JubaoPage extends StatelessWidget {
+  var logic = Get.find<JubaoController>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,6 +18,7 @@ class JubaoPage extends StatelessWidget {
         backgroundColor: PageStyle.c_F8F8F8,
         showShadow: false,
       ),
+      backgroundColor: PageStyle.c_F8F8F8,
       body: SafeArea(
           child: Container(
         padding: EdgeInsets.only(left: 24, right: 24),
@@ -27,26 +32,52 @@ class JubaoPage extends StatelessWidget {
               "举报理由",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
-            Container(
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    "请选择",
-                    style: TextStyle(
-                      fontSize: 16,
+            SizedBox(
+              height: 12,
+            ),
+            InkWell(
+              onTap: () {
+                // 弹出选择框
+                logic.showSelectDialog();
+              },
+              child: Container(
+                height: 55,
+                // margin: EdgeInsets.only(left: 24, right: 24),
+                padding: EdgeInsets.only(left: 16, right: 16),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(8)),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "请选择",
+                      style: TextStyle(
+                        fontSize: 16,
+                      ),
                     ),
-                  ),
-                  Image.asset("assets/images/xx.png"),
-                ],
+                    Icon(
+                      Icons.arrow_forward_ios,
+                      size: 16,
+                      color: Color(0xFF888888),
+                    )
+                  ],
+                ),
               ),
             ),
             SizedBox(
               height: 18,
             ),
-            Text("举报描述"),
+            Text(
+              "举报描述",
+              style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 12,
+            ),
             Container(
               child: TextField(
+                controller: logic.reasonController,
                 decoration: InputDecoration(
                   hintText: "请描述你遇到的问题",
                   hintStyle: TextStyle(
@@ -57,6 +88,7 @@ class JubaoPage extends StatelessWidget {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
+                minLines: 5,
               ),
             ),
             SizedBox(
