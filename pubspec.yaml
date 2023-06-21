@@ -90,15 +90,9 @@ dependency_overrides:
   emoji_picker_flutter: 1.4.0
   ffi: 2.0.1
   pull_to_refresh: ^2.0.0
-  # pull_to_refresh:
-  #   git:
-  #     url: https://github.com/miquelbeltran/flutter_pulltorefresh
-  #     ref: master
 
 flutter:
-
   uses-material-design: true
-
   assets:
     - assets/images/
     - assets/anim/
