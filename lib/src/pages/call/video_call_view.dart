@@ -53,16 +53,6 @@ class VideoCallPage extends StatelessWidget {
                     SizedBox(
                       height: 42,
                     ),
-                    if (logic.isCalling)
-                      Text(
-                        "等待对方接通…",
-                        style: TextStyle(fontSize: 16, color: Colors.white),
-                      )
-                    else
-                      Text(
-                        "17:03",
-                        style: TextStyle(fontSize: 32, color: Colors.white),
-                      ),
                   ],
                 ),
               )),

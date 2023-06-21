@@ -146,8 +146,8 @@ class ChatPage extends StatelessWidget {
                             onTapCarte: () => logic.onTapCarte(),
                             onTapFile: () => logic.onTapFile(),
                             onTapLocation: () => logic.onTapLocation(),
-                            onTapVideoCall: () => logic.call(
-                                context, "张三", "123456", "123456"),
+                            onTapVideoCall: () =>
+                                logic.call(context, "张三", "123456", "123456"),
                             onStopVoiceInput: () => logic.onStopVoiceInput(),
                             onStartVoiceInput: () => logic.onStartVoiceInput(),
                           ),

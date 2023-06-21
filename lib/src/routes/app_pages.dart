@@ -7,6 +7,8 @@ import 'package:openim_demo/src/pages/add_friend/search/search_binding.dart';
 import 'package:openim_demo/src/pages/add_friend/search/search_view.dart';
 import 'package:openim_demo/src/pages/add_friend/send_friend_request/send_friend_request_binding.dart';
 import 'package:openim_demo/src/pages/add_friend/send_friend_request/send_friend_request_view.dart';
+import 'package:openim_demo/src/pages/call/video_call2_binding.dart';
+import 'package:openim_demo/src/pages/call/video_call2_view.dart';
 import 'package:openim_demo/src/pages/call/video_call_binding.dart';
 import 'package:openim_demo/src/pages/call/video_call_view.dart';
 import 'package:openim_demo/src/pages/call/voice_call2_binding.dart';
@@ -164,6 +166,11 @@ class AppPages {
       name: AppRoutes.VIDEO_CALL,
       page: () => VideoCallPage(),
       binding: VideoCallBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.VIDEO_CALL2,
+      page: () => VideoCall2Page(),
+      binding: VideoCall2Binding(),
     ),
     GetPage(
       name: AppRoutes.REGISTER_SETUP_PWD,
