@@ -13,7 +13,7 @@ class AppNavigator {
     Get.until((route) => Get.currentRoute == AppRoutes.LOGIN);
   }
 
-  static void startJubao(){
+  static void startJubao() {
     Get.toNamed(AppRoutes.JUBAO);
   }
 
@@ -355,7 +355,7 @@ class AppNavigator {
     Get.toNamed(AppRoutes.ABOUT_US);
   }
 
-  static void startUserInfo(){
+  static void startUserInfo() {
     Get.toNamed(AppRoutes.USER_INFO);
   }
 
@@ -427,4 +427,16 @@ class AppNavigator {
     Get.toNamed(AppRoutes.FORGET_PASSWORD,
         arguments: {"accountType": accountType});
   }
+
+  static void toVoiceCallPage(
+      {required String uid, required String name, required String avatar}) {
+    Get.toNamed(AppRoutes.VOICE_CALL, arguments: {
+      "uid": uid,
+      "name": name,
+      "avatar": avatar,
+    });
+  }
+
+  static void toVideoCallPage(
+      {required String uid, required String name, required String avatar}) {}
 }

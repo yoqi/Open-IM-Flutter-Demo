@@ -18,9 +18,13 @@ import 'config.dart';
 class Apis {
   static int get _platform =>
       Platform.isAndroid ? IMPlatform.android : IMPlatform.ios;
-  static final openIMMemberIDS = [
-  ];
+  static final openIMMemberIDS = [];
   static final openIMGroupID = '082cad15fd27a2b6b875370e053ccd79';
+  static final String arg_appid = "2e78f89b62924d71a8697cce3f2cc56e";
+  static final String argChannelName = "demo1";
+  static final String argCert = "";// server签发证书
+  static final String arg_token =
+      "007eJxTYNBdWM4r+1d8Tcck+Ykl+TKn1VIfNv4Suf8/NX+bVdXODlEFBqNUc4s0C8skMyNLI5MUc8NECzNL8+TkVOM0o+RkU7NUudRJKQ2BjAzO79MYGKEQxGdlSEnNzTdkYAAALVce4g==";
 
   /// login
   static Future<LoginCertificate> login({
@@ -270,6 +274,7 @@ class Apis {
       },
     );
   }
+
   static Future<UpgradeInfoV2> checkUpgradeV2() {
     return dio.post<Map<String, dynamic>>(
       'https://www.pgyer.com/apiv2/app/check',

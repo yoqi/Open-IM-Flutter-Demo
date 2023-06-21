@@ -76,7 +76,7 @@ const Map<String, String> zh_CN = {
   "send": "发送",
   "chatRecord": "聊天记录",
   "callVoice": "语音通话",
-  "callVideo": "视频通话",
+  "callVideo": "视频通3话",
   "waitingAcceptVoiceCall": "正在等待对方接听…",
   "beInvitedVoiceCall": "邀请你进行语音通话…",
   "waitingAcceptVideoCall": "正在等待对方接受邀请",

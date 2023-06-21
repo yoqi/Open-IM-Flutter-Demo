@@ -832,7 +832,27 @@ class ChatLogic extends GetxController {
   }
 
   /// 拨视频或音频
-  void call() {}
+  void call(
+      context, String toUid, String toName, String toAvatar, bool isVoiceCall) {
+    if (isGroupChat) {
+      Get.snackbar('提示', '暂不支持群聊音视频通话');
+      return;
+    }
+
+    if (isVoiceCall) {
+      AppNavigator.toVoiceCallPage(
+        uid: toUid,
+        name: toName,
+        avatar: toAvatar,
+      );
+    } else {
+      AppNavigator.toVideoCallPage(
+        uid: toUid,
+        name: toName,
+        avatar: toAvatar,
+      );
+    }
+  }
 
   /// 群聊天长按头像为@用户
   void onLongPressLeftAvatar(int index) {

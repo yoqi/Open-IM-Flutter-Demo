@@ -7,6 +7,10 @@ import 'package:openim_demo/src/pages/add_friend/search/search_binding.dart';
 import 'package:openim_demo/src/pages/add_friend/search/search_view.dart';
 import 'package:openim_demo/src/pages/add_friend/send_friend_request/send_friend_request_binding.dart';
 import 'package:openim_demo/src/pages/add_friend/send_friend_request/send_friend_request_view.dart';
+import 'package:openim_demo/src/pages/call/video_call_binding.dart';
+import 'package:openim_demo/src/pages/call/video_call_view.dart';
+import 'package:openim_demo/src/pages/call/voice_call_binding.dart';
+import 'package:openim_demo/src/pages/call/voice_call_view.dart';
 import 'package:openim_demo/src/pages/chat/chat_binding.dart';
 import 'package:openim_demo/src/pages/chat/chat_setup/chat_setup_binding.dart';
 import 'package:openim_demo/src/pages/chat/chat_setup/chat_setup_view.dart';
@@ -143,6 +147,16 @@ class AppPages {
       name: AppRoutes.REGISTER_VERIFY_PHONE,
       page: () => VerifyPhonePage(),
       binding: VerifyPhoneBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.VOICE_CALL,
+      page: () => VoiceCallPage(),
+      binding: VoiceCallBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.VIDEO_CALL,
+      page: () => VideoCallPage(),
+      binding: VideoCallBinding(),
     ),
     GetPage(
       name: AppRoutes.REGISTER_SETUP_PWD,
