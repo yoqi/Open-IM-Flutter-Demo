@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_connect/http/src/utils/utils.dart';
 import 'package:openim_demo/src/pages/call/voice_call2_controller.dart';
 
 /// 接电话
@@ -37,11 +36,6 @@ class VoiceCall2Page extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    // Image.network(
-                    //   "assets/images/iocn_logo_default2.jpg",
-                    //   width: 100,
-                    //   height: 100,
-                    // ),
                     SizedBox(
                       height: 32,
                     ),
@@ -59,21 +53,26 @@ class VoiceCall2Page extends StatelessWidget {
                     SizedBox(
                       height: 42,
                     ),
-                    if (logic.isCallOrAnser)
+                    if (logic.isCalling)
                       Text(
                         "等待对方接通…",
                         style: TextStyle(fontSize: 16, color: Colors.white),
+                      )
+                    else
+                      Text(
+                        "17:03",
+                        style: TextStyle(fontSize: 32, color: Colors.white),
                       ),
                   ],
                 ),
               )),
-          Positioned(bottom: 122, child: buildBottomView())
+          Positioned(bottom: 122, child: buildBottomView(context))
         ],
       )),
     );
   }
 
-  buildBottomView() {
+  buildBottomView(BuildContext context) {
     return Column(
       children: [
         Container(
@@ -92,16 +91,18 @@ class VoiceCall2Page extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  logic.switcMicrophone(context);
+                },
                 child: Container(
                   width: 60,
                   height: 60,
                   decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.all(Radius.circular(30))),
-                  child: logic.isCallOrAnser
+                  child: logic.isMKFOn
                       ? Image.asset(
-                          "assets/images/voicetelephone-mute-button.png",
+                          "assets/images/voicetelephone-on-mic-button.png",
                           width: 64,
                           height: 64,
                         )
@@ -129,8 +130,7 @@ class VoiceCall2Page extends StatelessWidget {
               ),
               GestureDetector(
                   onTap: () {
-                    logic.isCallOrAnser = false;
-                    // logic.isShow = true;
+                    logic.switchSpeach();
                   },
                   child: Container(
                     width: 60,
@@ -138,7 +138,7 @@ class VoiceCall2Page extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.all(Radius.circular(30))),
-                    child: logic.isSpearchOn
+                    child: logic.isSpearchOn == true
                         ? Image.asset(
                             "assets/images/voicetelephone-on-speaker-button.png",
                             width: 64,

@@ -831,14 +831,8 @@ class ChatLogic extends GetxController {
     parseClickEvent(msg.quoteElem!.quoteMessage!);
   }
 
-  /// 拨视频或音频
-  void call(
+  void _call(
       context, String toUid, String toName, String toAvatar, bool isVoiceCall) {
-    if (isGroupChat) {
-      Get.snackbar('提示', '暂不支持群聊音视频通话');
-      return;
-    }
-
     if (isVoiceCall) {
       AppNavigator.toVoiceCallPage(
         uid: toUid,
@@ -852,6 +846,39 @@ class ChatLogic extends GetxController {
         avatar: toAvatar,
       );
     }
+  }
+
+  /// 拨视频或音频
+  void call(
+      context, String toUid, String toName, String toAvatar, bool isVoiceCall) {
+    if (isGroupChat) {
+      Get.snackbar('提示', '暂不支持群聊音视频通话');
+      return;
+    }
+    // 选择拨打音频还是视频
+    showDialog(
+        context: context,
+        builder: (context) {
+          return SimpleDialog(
+            title: Text('选择拨打方式'),
+            children: [
+              SimpleDialogOption(
+                child: Text('音频通话'),
+                onPressed: () {
+                  // Get.back();
+                  _call(context, toUid, toName, toAvatar, true);
+                },
+              ),
+              SimpleDialogOption(
+                child: Text('视频通话'),
+                onPressed: () {
+                  // Get.back();
+                  _call(context, toUid, toName, toAvatar, false);
+                },
+              ),
+            ],
+          );
+        });
   }
 
   /// 群聊天长按头像为@用户
