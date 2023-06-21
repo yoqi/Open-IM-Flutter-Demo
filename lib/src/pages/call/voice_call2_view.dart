@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:openim_demo/src/pages/call/voice_call2_controller.dart';
 
-/// 接电话
+/// 打电话
 class VoiceCall2Page extends StatelessWidget {
   VoiceCall2Page({Key? key}) : super(key: key);
   final logic = Get.find<VoiceCall2Controller>();

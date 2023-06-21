@@ -438,5 +438,11 @@ class AppNavigator {
   }
 
   static void toVideoCallPage(
-      {required String uid, required String name, required String avatar}) {}
+      {required String uid, required String name, required String avatar}) {
+    Get.toNamed(AppRoutes.VIDEO_CALL, arguments: {
+      "uid": uid,
+      "name": name,
+      "avatar": avatar,
+    });
+  }
 }

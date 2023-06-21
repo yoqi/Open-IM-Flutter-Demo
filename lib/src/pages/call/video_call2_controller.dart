@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class VideoCallController extends GetxController {
+class VideoCall2Controller extends GetxController {
   RxString toUid = "".obs;
   RxString toName = "".obs;
   RxString toAvatar = "".obs;

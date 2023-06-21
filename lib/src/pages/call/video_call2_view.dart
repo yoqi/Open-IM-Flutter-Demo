@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:openim_demo/src/pages/call/video_call2_controller.dart';
 
-import 'video_call_controller.dart';
-
-class VideoCallPage extends StatelessWidget {
-  VideoCallPage({Key? key}) : super(key: key);
-  final logic = Get.find<VideoCallController>();
+/// 打视频
+class VideoCall2Page extends StatelessWidget {
+  VideoCall2Page({Key? key}) : super(key: key);
+  final logic = Get.find<VideoCall2Controller>();
   Size get _size => MediaQuery.of(Get.context!).size;
 
   @override

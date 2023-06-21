@@ -849,8 +849,7 @@ class ChatLogic extends GetxController {
   }
 
   /// 拨视频或音频
-  void call(
-      context, String toUid, String toName, String toAvatar, bool isVoiceCall) {
+  void call(context, String toUid, String toName, String toAvatar) {
     if (isGroupChat) {
       Get.snackbar('提示', '暂不支持群聊音视频通话');
       return;
