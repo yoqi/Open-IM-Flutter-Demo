@@ -114,7 +114,9 @@ class VoiceCall2Page extends StatelessWidget {
                 ),
               ),
               GestureDetector(
-                onTap: () {},
+                onTap: () {
+                  logic.hangUp();
+                },
                 child: Container(
                   width: 60,
                   height: 60,

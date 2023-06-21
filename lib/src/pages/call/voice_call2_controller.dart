@@ -32,7 +32,11 @@ class VoiceCall2Controller extends GetxController {
     // ));
   }
 
-  void hangUp() {}
+  void hangUp() {
+    // _engine.leaveChannel();
+    // _engine.destroy();
+    Get.back();
+  }
 
   void accept() {}
 
