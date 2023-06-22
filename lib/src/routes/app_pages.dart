@@ -71,6 +71,7 @@ import 'package:openim_demo/src/pages/forget_password/forget_password_binding.da
 import 'package:openim_demo/src/pages/forget_password/forget_password_view.dart';
 import 'package:openim_demo/src/pages/home/home_binding.dart';
 import 'package:openim_demo/src/pages/home/home_view.dart';
+import 'package:openim_demo/src/pages/jubao/jubao_binding.dart';
 import 'package:openim_demo/src/pages/jubao/jubao_view.dart';
 import 'package:openim_demo/src/pages/login/login_binding.dart';
 import 'package:openim_demo/src/pages/login/login_view.dart';
@@ -290,7 +291,7 @@ class AppPages {
     GetPage(
       name: AppRoutes.JUBAO,
       page: () => JubaoPage(),
-      binding: JoinGroupBinding(),
+      binding: JubaoBinding(),
     ),
     GetPage(
       name: AppRoutes.MY_INFO,
