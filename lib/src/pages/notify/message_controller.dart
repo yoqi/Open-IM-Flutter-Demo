@@ -24,7 +24,9 @@ class MessageController extends GetxController {
     // AppNavigator.startFriendApplicationList();
     AppNavigator.startAddFriend();
   }
-
+  void toAddFriendList() {
+    AppNavigator.startFriendApplicationList();
+  }
   void toAddGroup() {
     AppNavigator.startAddGroupBySearch();
   }

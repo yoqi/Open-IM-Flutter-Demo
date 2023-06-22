@@ -405,7 +405,7 @@ class MessagePage extends StatelessWidget {
             ],
           ),
           onTap: () {
-            messageController.toAddFriend();
+            messageController.toAddFriendList();
           },
         ),
         SizedBox(height: 16),
